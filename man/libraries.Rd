@@ -17,10 +17,10 @@ libraries(..., verbose = F, quoted = F)
 Attach a number of library packages at once
 }
 \examples{
-libraries(rmarkdown, cranlogs, visdat, rentrez)
-libraries("rmarkdown", "cranlogs", "visdat", "rentrez", quoted = T)
-libraries(c("broom", "forcats"), quoted = T)
-libraries(visdat, verbose = TRUE)
+libraries(dichromat, jsonlite)
+libraries("dichromat", "jsonlite", quoted = T)
+libraries(c("dichromat", "jsonlite"), quoted = T)
+libraries(dichromat, verbose = TRUE)
 }
 \author{
 Adrian Zetner
