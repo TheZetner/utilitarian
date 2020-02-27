@@ -48,3 +48,6 @@ rsconnect/
 # Alternately use the .gitignore file in the output folder for finer control
 # output/*
 # !output/.gitkeep/
+inst/doc
+doc
+Meta

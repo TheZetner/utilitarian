@@ -1,0 +1,74 @@
+---
+title: "Package Related Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Package-Related}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(utilitarian)
+```
+
+## usePackage  
+
+Don't know if something is installed? Want your code to install packages when run if they're absent? `usePackage` is here to help!
+
+```{r usePackage}
+
+usePackage("dichromat")
+
+```
+
+
+
+## libraries  
+
+Tired of quoting and typing in multiple library statements? No more!
+
+### Several flavours:  
+
+#### Silent and easy typing  
+
+Don't bother with quotes. Just type your package names in and off you go. 
+
+```{r libraries1}
+libraries(dichromat, jsonlite)
+sessionInfo()
+```
+
+#### Quoted  
+
+Like `library()` but better.
+
+```{r libraries2}
+libraries("dichromat", "jsonlite", quoted = T)
+sessionInfo()
+```
+
+#### Quoted in a Character Vector  
+
+Like `library()` but *even* better.
+
+```{r libraries3}
+mypkgs <- c("dichromat", "jsonlite")
+libraries(mypkgs, quoted = T)
+sessionInfo()
+```
+
+#### Unquote or Quoted but with Verbose Feedback  
+
+Because you like R to talk back. 
+
+```{r libraries4}
+libraries(digest, verbose = TRUE)
+```
+
