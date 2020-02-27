@@ -55,6 +55,3 @@ libraries <- function(..., verbose = F, quoted = F) {
                   paste(pkgs, collapse = ", ")))
     }
 }
-
-libraries(rmarkdown, cranlogs)
-sessionInfo()
