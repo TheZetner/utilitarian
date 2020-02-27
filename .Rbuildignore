@@ -6,3 +6,6 @@
 ^\.travis\.yml$     # Used for continuous integration testing with travis
 ^doc$
 ^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

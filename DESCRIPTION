@@ -1,12 +1,13 @@
 Package: utilitarian
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A Selection of Useful R Functions
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Adrian Zetner
+Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
+Description: Several subgroups of functions are available:
+    Package-related: loading, installing, attaching, etc... of packages
+URL: https://thezetner.github.io/utilitarian/, https://github.com/TheZetner/utilitarian
+License: Apache License, Version 2.0
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr
