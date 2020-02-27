@@ -37,10 +37,11 @@ usePackage <- function(p) {
 #' @keywords utilitarian library packages
 #' @export
 #' @examples
-#' libraries(rmarkdown, cranlogs, visdat, rentrez)
-#' libraries("rmarkdown", "cranlogs", "visdat", "rentrez", quoted = T)
-#' libraries(c("broom", "forcats"), quoted = T)
-#' libraries(visdat, verbose = TRUE)
+#' libraries(dichromat, jsonlite)
+#' libraries("dichromat", "jsonlite", quoted = T)
+#' libraries(c("dichromat", "jsonlite"), quoted = T)
+#' libraries(dichromat, verbose = TRUE)
+
 
 libraries <- function(..., verbose = F, quoted = F) {
   if (quoted) {

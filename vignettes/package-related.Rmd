@@ -69,6 +69,6 @@ sessionInfo()
 Because you like R to talk back. 
 
 ```{r libraries4}
-libraries(digest, verbose = TRUE)
+libraries(dichromat, verbose = TRUE)
 ```
 
