@@ -49,9 +49,13 @@ libraries <- function(..., verbose = F, quoted = F) {
   } else {
     pkgs <- gsub("~", "", as.character(enquos(...)))
   }
-  sapply(pkgs, library, character.only = T)
   if (verbose) {
+    sapply(pkgs, library, character.only = T)
     message(paste("Attached packages:",
                   paste(pkgs, collapse = ", ")))
+  } else{
+    suppressPackageStartupMessages({
+      sapply(pkgs, library, character.only = T)
+    })
     }
 }

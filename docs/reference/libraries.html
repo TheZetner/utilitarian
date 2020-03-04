@@ -106,7 +106,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/TheZetner/utilitarian">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -121,7 +126,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Call multiple library statements at once</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/package-related.R'><code>R/package-related.R</code></a></small>
     <div class="hidden name"><code>libraries.Rd</code></div>
     </div>
 
@@ -150,10 +155,7 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='no'>jsonlite</span>)
-<span class='fu'>libraries</span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>, <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)
-<span class='fu'>libraries</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>), <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)
-<span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Attached packages: dichromat</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='no'>jsonlite</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called ‘dichromat’</span></div><div class='input'><span class='fu'>libraries</span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>, <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called ‘dichromat’</span></div><div class='input'><span class='fu'>libraries</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>), <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called ‘dichromat’</span></div><div class='input'><span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called ‘dichromat’</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
