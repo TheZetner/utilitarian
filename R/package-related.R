@@ -54,8 +54,8 @@ libraries <- function(..., verbose = F, quoted = F) {
     message(paste("Attached packages:",
                   paste(pkgs, collapse = ", ")))
   } else{
-    suppressPackageStartupMessages({
-      sapply(pkgs, library, character.only = T)
-    })
+    sink(tempfile(), type = c("output", "message"))
+    sapply(pkgs, library, character.only = T)
+    sink()
     }
 }
