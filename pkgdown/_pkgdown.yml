@@ -10,6 +10,10 @@ authors:
   Adrian Zetner:
     href: mailto:adrian.zetner@gmail.com
 
+template:
+  params:
+    ganalytics: UA-159966843-1
+
 development:
   mode: auto
 
