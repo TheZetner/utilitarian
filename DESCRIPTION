@@ -1,11 +1,10 @@
 Package: utilitarian
 Type: Package
-Title: A Selection of Useful R Functions
+Title: Utilitarian: A Selection of Useful R Functions
 Version: 0.1.1
 Author: Adrian Zetner
 Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
-Description: Several subgroups of functions are available:
-    Package-related: loading, installing, attaching, etc... of packages
+Description: Functions and Addins to make youR life better
 URL: https://thezetner.github.io/utilitarian/, https://github.com/TheZetner/utilitarian
 License: Apache License, Version 2.0
 Encoding: UTF-8
