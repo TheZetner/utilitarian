@@ -3,4 +3,7 @@ pkgdown: 1.4.1.9000
 pkgdown_sha: 5e873fd9e478dddd784c31d8c8f994fd4b341c2a
 articles:
   package-related: package-related.html
+urls:
+  reference: https://thezetner.github.io/utilitarian//reference
+  article: https://thezetner.github.io/utilitarian//articles
 

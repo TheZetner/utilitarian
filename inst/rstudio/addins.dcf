@@ -1,0 +1,9 @@
+Name: Insert %>% View()
+Description: Inserts `%>% View()` at the cursor position.
+Binding: insertViewAddin
+Interactive: false
+
+Name: Insert %>% glimpse()
+Description: Inserts `%>% glimpse()` at the cursor position.
+Binding: insertGlimpseAddin
+Interactive: false

@@ -1,7 +1,7 @@
 Package: utilitarian
 Type: Package
 Title: A Selection of Useful R Functions
-Version: 0.1.0
+Version: 0.1.1
 Author: Adrian Zetner
 Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
 Description: Several subgroups of functions are available:

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hello, World! — hello • utilitarian</title>
+<title>Insert %&gt;% glimpse() at cursor position — insertGlimpseAddin • utilitarian</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,10 @@
 
 
 
-<meta property="og:title" content="Hello, World! — hello" />
-<meta property="og:description" content="Prints 'Hello, world!'." />
-<meta property="og:image" content="/logo.png" />
+<meta property="og:title" content="Insert %&gt;% glimpse() at cursor position — insertGlimpseAddin" />
+<meta property="og:description" content="Call this function as an addin to insert  %&amp;gt;% glimpse() at the cursor position.
+Useful for quickly checking pipeline status. Bind to ctrl+shift+V" />
+<meta property="og:image" content="https://thezetner.github.io/utilitarian/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -77,7 +78,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -125,26 +126,24 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Hello, World!</h1>
-    
-    <div class="hidden name"><code>hello.Rd</code></div>
+    <h1>Insert %&gt;% glimpse() at cursor position</h1>
+    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/addins.R'><code>R/addins.R</code></a></small>
+    <div class="hidden name"><code>insertGlimpseAddin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Prints 'Hello, world!'.</p>
+    <p>Call this function as an addin to insert <code> %&gt;% glimpse()</code> at the cursor position.
+Useful for quickly checking pipeline status. Bind to ctrl+shift+V</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hello</span>()</pre>
+    <pre class="usage"><span class='fu'>insertGlimpseAddin</span>()</pre>
 
 
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hello</span>()</div><div class='output co'>#&gt; <span class='error'>Error in hello(): could not find function "hello"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
@@ -153,7 +152,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Adrian Zetner.</p>
+  <p>Developed by <a href='mailto:adrian.zetner@gmail.com'>Adrian Zetner</a>.</p>
 </div>
 
 <div class="pkgdown">

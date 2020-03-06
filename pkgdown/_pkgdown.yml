@@ -1,0 +1,26 @@
+url: https://thezetner.github.io/utilitarian/
+
+home:
+  title: Useful R functions
+  links:
+  - text: Ask a question about utilitarian
+    href: mailto:adrian.zetner@gmail.com
+
+authors:
+  Adrian Zetner:
+    href: mailto:adrian.zetner@gmail.com
+
+development:
+  mode: auto
+
+reference:
+  - title: Package Related
+    desc: Functions that help with package annoyances
+    contents:
+    - usePackage
+    - libraries
+  - title: Addins
+    desc: Addin functions accessible via addins in RStudio
+    contents:
+    - insertViewAddin
+    - insertGlimpseAddin

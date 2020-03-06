@@ -16,5 +16,14 @@ _Sources listed if written by other than Adrian_
 
 **Package Related**  
 
-  * `usePackage()` - Tries to attach a package, if missing: tries to install it. [Source](https://github.com/sussyfuss/usefulScripts)  
-  * `libraries()` - Attach numerous packages at once using bare names, quoted names, or a character vector of names  
+  * `usePackage()` 
+      - Tries to attach a package, if missing: tries to install it. [Source](https://github.com/sussyfuss/usefulScripts)  
+  * `libraries()`  
+      - Attach numerous packages at once using bare names, quoted names, or a character vector of names  
+
+**Addins**
+
+  * `insertViewAddin()`  
+      - To quickly cut a pipeline short and view the tibble at that step. Find in the Addin menu or bind it to something convenient.
+  * `insertGlimpseAddin()`  
+      - To quickly cut a pipeline short and glimpse the tibble at that step. Find in the Addin menu or bind it to something convenient.
