@@ -31,7 +31,7 @@ usePackage("dichromat")
 Combine `usePackage()` with the `purrr` package to attempt to attach and (install if unavailable) multiple packages. 
 Walk doesn't return an output, only the secondary effects. In this case, an attached package from each of those in the character vector.
 ```{r usePackage2}
-walk(c("DT", "dplyr", "lubridate", "readr", "ggplot2", "ggridges", "viridis", "hrbrthemes", "forcats", "tidyr"), ~ usePackage(.x))
+purrr::walk(c("DT", "dplyr", "lubridate", "readr", "ggplot2", "ggridges", "viridis", "hrbrthemes", "forcats", "tidyr"), ~ usePackage(.x))
 ```
 
 
