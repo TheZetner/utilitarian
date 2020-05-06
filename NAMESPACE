@@ -3,5 +3,6 @@
 export(insertGlimpseAddin)
 export(insertViewAddin)
 export(libraries)
+export(normalize)
 export(usePackage)
 importFrom(dplyr,enquos)

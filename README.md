@@ -27,3 +27,8 @@ _Sources listed if written by other than Adrian_
       - To quickly cut a pipeline short and view the tibble at that step. Find in the Addin menu or bind it to something convenient.
   * `insertGlimpseAddin()`  
       - To quickly cut a pipeline short and glimpse the tibble at that step. Find in the Addin menu or bind it to something convenient.
+
+**Maths**
+
+  * `normalize()`
+      - Normalize a numeric vector over a supplied range 

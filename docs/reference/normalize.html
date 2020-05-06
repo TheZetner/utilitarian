@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Call multiple library statements at once — libraries • utilitarian</title>
+<title>Normalize — normalize • utilitarian</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="Call multiple library statements at once — libraries" />
-<meta property="og:description" content="Attach a number of library packages at once" />
+<meta property="og:title" content="Normalize — normalize" />
+<meta property="og:description" content="Normalizes a vector of values to a range of 0-1
+x - min(x)) / (max(x) - min(x)" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,37 +129,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Call multiple library statements at once</h1>
-    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/package-related.R'><code>R/package-related.R</code></a></small>
-    <div class="hidden name"><code>libraries.Rd</code></div>
+    <h1>Normalize</h1>
+    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/maths.R'><code>R/maths.R</code></a></small>
+    <div class="hidden name"><code>normalize.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Attach a number of library packages at once</p>
+    <p>Normalizes a vector of values to a range of 0-1
+x - min(x)) / (max(x) - min(x)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>libraries</span>(<span class='no'>...</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='no'>F</span>, <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='fu'>normalize</span>(<span class='no'>x</span>, <span class='kw'>newlims</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>Package names</p></td>
+      <th>x</th>
+      <td><p>Vector of values</p></td>
     </tr>
     <tr>
-      <th>verbose</th>
-      <td><p>Logical whether to announce via message() what packages are being attached.</p></td>
-    </tr>
-    <tr>
-      <th>quoted</th>
-      <td><p>Logical whether package names supplied bare or quoted as character</p></td>
+      <th>newlims</th>
+      <td><p>numeric vector of new minimum and maximum eg. c(2,4)</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Normalized vector of values to newmax and newmin</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='no'>jsonlite</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called 'dichromat'</span></div><div class='input'><span class='fu'>libraries</span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>, <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called 'dichromat'</span></div><div class='input'><span class='fu'>libraries</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dichromat"</span>, <span class='st'>"jsonlite"</span>), <span class='kw'>quoted</span> <span class='kw'>=</span> <span class='no'>T</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called 'dichromat'</span></div><div class='input'><span class='fu'>libraries</span>(<span class='no'>dichromat</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): there is no package called 'dichromat'</span></div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+ <span class='fu'>normalize</span>(<span class='no'>x</span>)
+ }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
