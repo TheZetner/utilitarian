@@ -10,6 +10,10 @@
 
 _utilitarian_ is a package "full" of useful R functions that reduce the day to day pain of using R as experienced by its author.
 
+### Installation
+
+```remotes::install_github("TheZetner/utilitarian")```
+
 ### Current functions:
 
 _Sources listed if written by other than Adrian_
