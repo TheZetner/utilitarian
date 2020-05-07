@@ -6,7 +6,7 @@
 #' @param y Another vector of values
 #' @return Vector of values that are in X but not in Y
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  x %notin% y
 #'  }
 #' @export

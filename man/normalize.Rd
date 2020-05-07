@@ -20,6 +20,6 @@ x - min(x)) / (max(x) - min(x)
 }
 \examples{
 \dontrun{
- normalize(x)
+ normalize(mtcars$mpg)
  }
 }

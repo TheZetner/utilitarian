@@ -18,7 +18,7 @@ Vector of values that are in X but not in Y
 Opposite of %in%
 }
 \examples{
-\dontrun{
+\donttest{
  x \%notin\% y
  }
 }

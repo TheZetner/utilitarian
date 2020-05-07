@@ -17,10 +17,10 @@ libraries(..., verbose = F, quoted = F)
 Attach a number of library packages at once
 }
 \examples{
-libraries(dichromat, jsonlite)
-libraries("dichromat", "jsonlite", quoted = T)
-libraries(c("dichromat", "jsonlite"), quoted = T)
-libraries(dichromat, verbose = TRUE)
+libraries(grid, jsonlite)
+libraries("grid", "jsonlite", quoted = T)
+libraries(c("grid", "jsonlite"), quoted = T)
+libraries(grid, verbose = TRUE)
 }
 \author{
 Adrian Zetner

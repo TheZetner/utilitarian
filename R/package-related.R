@@ -37,10 +37,10 @@ usePackage <- function(p) {
 #' @keywords utilitarian library packages
 #' @export
 #' @examples
-#' libraries(dichromat, jsonlite)
-#' libraries("dichromat", "jsonlite", quoted = T)
-#' libraries(c("dichromat", "jsonlite"), quoted = T)
-#' libraries(dichromat, verbose = TRUE)
+#' libraries(grid, jsonlite)
+#' libraries("grid", "jsonlite", quoted = T)
+#' libraries(c("grid", "jsonlite"), quoted = T)
+#' libraries(grid, verbose = TRUE)
 
 
 libraries <- function(..., verbose = F, quoted = F) {

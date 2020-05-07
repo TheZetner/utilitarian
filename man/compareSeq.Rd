@@ -17,8 +17,3 @@ compareSeq(ref, seq)
 \description{
 Produces a table showing all the variants between two DNAString objects
 }
-\examples{
-\dontrun{
- compareSeq(aln[[1]], aln[[2]])
- }
-}

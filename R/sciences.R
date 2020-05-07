@@ -6,12 +6,7 @@
 #' @param seq Sequence to compare
 #' @return 3 column tibble of Position, Ref, and ALT
 #'
-#' @importFrom tibble tibble
 #'
-#' @examples
-#' \dontrun{
-#'  compareSeq(aln[[1]], aln[[2]])
-#'  }
 #' @export
 
 compareSeq <- function(ref, seq){

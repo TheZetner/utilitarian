@@ -8,7 +8,7 @@
 #' @return Normalized vector of values to newmax and newmin
 #' @examples
 #' \dontrun{
-#'  normalize(x)
+#'  normalize(mtcars$mpg)
 #'  }
 #' @export
 normalize <- function(x, newlims = c(0,1)){
