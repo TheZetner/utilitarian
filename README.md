@@ -36,3 +36,8 @@ _Sources listed if written by other than Adrian_
 
   * `normalize()`
       - Normalize a numeric vector over a supplied range 
+
+**Quality of Life**
+
+  * %!in%
+      - Not In. Find out what's in one vector and... not in another.
