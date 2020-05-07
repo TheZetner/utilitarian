@@ -1,13 +1,13 @@
 #' Not In
 #'
-#' Opposite of \%in\%
+#' Opposite of %in%
 #'
 #' @param x Vector of values
 #' @param y Another vector of values
 #' @return Vector of values that are in X but not in Y
 #' @examples
 #' \dontrun{
-#'  x %!in% y
+#'  x %notin% y
 #'  }
 #' @export
-`%!in%` <- function(x,y) {!(x %in% y)}
+`%notin%` <- function(x,y) {!(x %in% y)}

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • utilitarian</title>
+<title>Not In — %notin% • utilitarian</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Not In — %notin%" />
+<meta property="og:description" content="Opposite of " />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -125,78 +126,41 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Not In</h1>
+    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/qol.R'><code>R/qol.R</code></a></small>
+    <div class="hidden name"><code>grapes-notin-grapes.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Opposite of <!-- %in% --></p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>x</span> <span class='kw'>%notin%</span> <span class='no'>y</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="compareSeq.html">compareSeq()</a></code> </p>
-        </td>
-        <td><p>Compare Sequences</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="grapes-notin-grapes.html">`%notin%`</a></code> </p>
-        </td>
-        <td><p>Not In</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="insertGlimpseAddin.html">insertGlimpseAddin()</a></code> </p>
-        </td>
-        <td><p>Insert %&gt;% glimpse() at cursor position</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="insertViewAddin.html">insertViewAddin()</a></code> </p>
-        </td>
-        <td><p>Insert %&gt;% View() at cursor position</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="libraries.html">libraries()</a></code> </p>
-        </td>
-        <td><p>Call multiple library statements at once</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="normalize.html">normalize()</a></code> </p>
-        </td>
-        <td><p>Normalize</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="usePackage.html">usePackage()</a></code> </p>
-        </td>
-        <td><p>Package installing and loading function</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>Vector of values</p></td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td><p>Another vector of values</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Vector of values that are in X but not in Y</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+ <span class='no'>x</span> <span class='kw'>%notin%</span> <span class='no'>y</span>
+ }</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
