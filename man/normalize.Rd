@@ -19,7 +19,6 @@ Normalizes a vector of values to a range of 0-1
 x - min(x)) / (max(x) - min(x)
 }
 \examples{
-\dontrun{
- normalize(mtcars$mpg)
- }
+normalize(mtcars$mpg)
+normalize(mtcars$mpg, c(5, 10))
 }

@@ -6,17 +6,18 @@
 #' and will install it, if not already installed, and then load it.
 #' Taken from \url{https://github.com/sussyfuss/usefulScripts}
 #' @param p A package name as a string in quotes.
-#' @keywords use pack
+#' @keywords use package
+#' @import utils
 #' @export
 #' @examples
-#' usePackage("readr")
+#' \donttest{ usePackage("readr") }
 
-usePackage <- function(p) {
+usePackage <- function(p, repos = "http://cran.us.r-project.org") {
 
   if (!is.element(p, installed.packages()[, 1])) {
 
     message(paste("Package", p, "not found, installing..."))
-    install.packages(p, dep = TRUE)
+    install.packages(p, dep = TRUE, repos = repos)
 
   }
 
@@ -37,10 +38,12 @@ usePackage <- function(p) {
 #' @keywords utilitarian library packages
 #' @export
 #' @examples
+#' \donttest{
 #' libraries(grid, jsonlite)
-#' libraries("grid", "jsonlite", quoted = T)
-#' libraries(c("grid", "jsonlite"), quoted = T)
+#' libraries("grid", "jsonlite", quoted = TRUE)
+#' libraries(c("grid", "jsonlite"), quoted = TRUE)
 #' libraries(grid, verbose = TRUE)
+#' }
 
 
 libraries <- function(..., verbose = F, quoted = F) {

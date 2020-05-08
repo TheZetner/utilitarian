@@ -3,6 +3,8 @@
 #' Call this function as an addin to insert \code{ \%>\% View()} at the cursor position.
 #' Useful for quickly checking pipeline status. Bind to ctrl+shift+V
 #'
+#' @importFrom
+#'
 #' @export
 insertViewAddin <- function() {
   rstudioapi::insertText(" %>% View()")

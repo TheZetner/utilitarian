@@ -5,7 +5,7 @@
 #' @param ref Reference
 #' @param seq Sequence to compare
 #' @return 3 column tibble of Position, Ref, and ALT
-#'
+#' @importFrom tibble tibble
 #'
 #' @export
 

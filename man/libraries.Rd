@@ -17,10 +17,12 @@ libraries(..., verbose = F, quoted = F)
 Attach a number of library packages at once
 }
 \examples{
+\donttest{
 libraries(grid, jsonlite)
-libraries("grid", "jsonlite", quoted = T)
-libraries(c("grid", "jsonlite"), quoted = T)
+libraries("grid", "jsonlite", quoted = TRUE)
+libraries(c("grid", "jsonlite"), quoted = TRUE)
 libraries(grid, verbose = TRUE)
+}
 }
 \author{
 Adrian Zetner

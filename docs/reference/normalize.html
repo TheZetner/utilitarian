@@ -159,9 +159,15 @@ x - min(x)) / (max(x) - min(x)</p>
     <p>Normalized vector of values to newmax and newmin</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
- <span class='fu'>normalize</span>(<span class='no'>mtcars</span>$<span class='no'>mpg</span>)
- }</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>normalize</span>(<span class='no'>mtcars</span>$<span class='no'>mpg</span>)</div><div class='output co'>#&gt;  [1] 0.4510638 0.4510638 0.5276596 0.4680851 0.3531915 0.3276596 0.1659574
+#&gt;  [8] 0.5957447 0.5276596 0.3744681 0.3148936 0.2553191 0.2936170 0.2042553
+#&gt; [15] 0.0000000 0.0000000 0.1829787 0.9361702 0.8510638 1.0000000 0.4723404
+#&gt; [22] 0.2170213 0.2042553 0.1234043 0.3744681 0.7191489 0.6638298 0.8510638
+#&gt; [29] 0.2297872 0.3957447 0.1957447 0.4680851</div><div class='input'><span class='fu'>normalize</span>(<span class='no'>mtcars</span>$<span class='no'>mpg</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5</span>, <span class='fl'>10</span>))</div><div class='output co'>#&gt;  [1]  7.255319  7.255319  7.638298  7.340426  6.765957  6.638298  5.829787
+#&gt;  [8]  7.978723  7.638298  6.872340  6.574468  6.276596  6.468085  6.021277
+#&gt; [15]  5.000000  5.000000  5.914894  9.680851  9.255319 10.000000  7.361702
+#&gt; [22]  6.085106  6.021277  5.617021  6.872340  8.595745  8.319149  9.255319
+#&gt; [29]  6.148936  6.978723  5.978723  7.340426</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

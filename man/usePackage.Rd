@@ -4,7 +4,7 @@
 \alias{usePackage}
 \title{Package installing and loading function}
 \usage{
-usePackage(p)
+usePackage(p, repos = "http://cran.us.r-project.org")
 }
 \arguments{
 \item{p}{A package name as a string in quotes.}
@@ -15,7 +15,7 @@ and will install it, if not already installed, and then load it.
 Taken from \url{https://github.com/sussyfuss/usefulScripts}
 }
 \examples{
-usePackage("readr")
+\donttest{ usePackage("readr") }
 }
-\keyword{pack}
+\keyword{package}
 \keyword{use}

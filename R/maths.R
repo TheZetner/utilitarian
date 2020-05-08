@@ -7,9 +7,8 @@
 #' @param newlims numeric vector of new minimum and maximum eg. c(2,4)
 #' @return Normalized vector of values to newmax and newmin
 #' @examples
-#' \dontrun{
-#'  normalize(mtcars$mpg)
-#'  }
+#' normalize(mtcars$mpg)
+#' normalize(mtcars$mpg, c(5, 10))
 #' @export
 normalize <- function(x, newlims = c(0,1)){
   x <- (x - min(x)) / (max(x) - min(x))
