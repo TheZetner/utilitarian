@@ -6,6 +6,7 @@
 #' and will install it, if not already installed, and then load it.
 #' Taken from \url{https://github.com/sussyfuss/usefulScripts}
 #' @param p A package name as a string in quotes.
+#' @param repos Defaults to US cran otherwise put a cran mirror in as character
 #' @keywords use package
 #' @import utils
 #' @export
@@ -17,7 +18,7 @@ usePackage <- function(p, repos = "http://cran.us.r-project.org") {
   if (!is.element(p, installed.packages()[, 1])) {
 
     message(paste("Package", p, "not found, installing..."))
-    install.packages(p, dep = TRUE, repos = repos)
+    install.packages(p, dependencies = TRUE, repos = repos)
 
   }
 

@@ -8,6 +8,8 @@ usePackage(p, repos = "http://cran.us.r-project.org")
 }
 \arguments{
 \item{p}{A package name as a string in quotes.}
+
+\item{repos}{Defaults to US cran otherwise put a cran mirror in as character}
 }
 \description{
 The usePackage function takes a single command, the name of a package,
