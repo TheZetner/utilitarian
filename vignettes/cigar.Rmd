@@ -1,0 +1,70 @@
+---
+title: "CIGAR Visualization"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CIGAR Visualization}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(utilitarian)
+
+```
+
+
+## Read in SAM files as tibble
+```{r warning=FALSE, message=FALSE}
+
+toy <- read_sam(system.file("extdata", "toy.sam", package = "utilitarian"))
+
+toy
+```
+
+## Create Tidy CIGAR Data
+
+Results in a long table of tidy data showing start and end positions of the operations along with their English translations.
+
+Due to the facetting of CIGAR visualizations on Reference names (RNAME) it is wise to group them together if the organism is what matters. For example in the case of the human genome vs sars coronavirus grouping all the human chromosomes together is useful.
+
+```
+sam %>% 
+  mutate(RNAME = case_when(RNAME == "MN908947.3" ~ "hcov",
+                           RNAME == "*" ~ "unmapped",
+                           TRUE ~ "human")) %>% 
+  tidy_cigar()
+                           
+```
+
+```{r warning=FALSE, message=FALSE}
+
+toy.tc <- tidy_cigar(toy)
+
+toy.tc
+
+```
+
+## Plot a CIGAR
+
+Plotting a cigar from a single read in the tidied cigar table is done using `plot_cigar()` and specifying the read. Plots are facetted based on the references. Returns a plot. 
+
+```{r}
+plot_cigar(toy.tc, "r002")
+```
+
+## Plot all CIGARs
+
+A wrapper around calling `plot_cigar()` on all the reads in the SAM file. Will warn and stop if more than 20 elements to be created, override this with the `lg=TRUE` argument.
+
+```{r fig_width=6}
+p <- plot_all_cigars(toy.tc)
+
+p[[1]]
+p[[2]]
+
+```

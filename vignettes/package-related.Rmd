@@ -2,7 +2,7 @@
 title: "Package Related Functions"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Package-Related}
+  %\VignetteIndexEntry{Package Related Functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
