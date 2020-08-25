@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -61,6 +61,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/cigar.html">CIGAR Visualization</a>
+    </li>
+    <li>
       <a href="../articles/package-related.html">Package Related Functions</a>
     </li>
   </ul>
@@ -102,52 +105,52 @@
 <a href="#usepackage" class="anchor"></a>usePackage</h2>
 <p>Don’t know if something is installed? Want your code to install packages when run if they’re absent? <code>usePackage</code> is here to help!</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r">
-usePackage("dichromat")
-#&gt; Package dichromat not found, installing...
-#&gt; Installing package into 'C:/Users/AZetner/AppData/Local/Temp/RtmpUZCfhn/temp_libpath66a0c17408d'
-#&gt; (as 'lib' is unspecified)
-#&gt; package 'dichromat' successfully unpacked and MD5 sums checked
-#&gt; 
-#&gt; The downloaded binary packages are in
-#&gt;  C:\Users\AZetner\AppData\Local\Temp\RtmpwJgrIB\downloaded_packages
-#&gt; Loading Package dichromat...
-#&gt; Loading required package: dichromat</pre></body></html></div>
+<span class="fu"><a href="../reference/usePackage.html">usePackage</a></span>(<span class="st">"dichromat"</span>)
+<span class="co">#&gt; Package dichromat not found, installing...</span>
+<span class="co">#&gt; Installing package into 'C:/Users/AZetner/AppData/Local/Temp/RtmpmsuNa5/temp_libpath83e02116713c'</span>
+<span class="co">#&gt; (as 'lib' is unspecified)</span>
+<span class="co">#&gt; package 'dichromat' successfully unpacked and MD5 sums checked</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; The downloaded binary packages are in</span>
+<span class="co">#&gt;  C:\Users\AZetner\AppData\Local\Temp\Rtmp65Dm1X\downloaded_packages</span>
+<span class="co">#&gt; Loading Package dichromat...</span>
+<span class="co">#&gt; Loading required package: dichromat</span></pre></body></html></div>
 <p>Combine <code><a href="../reference/usePackage.html">usePackage()</a></code> with the <code>purrr</code> package to attempt to attach and (install if unavailable) multiple packages. Walk doesn’t return an output, only the secondary effects. In this case, an attached package from each of those in the character vector.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r">purrr::walk(c("DT", "dplyr", "lubridate", "readr", "ggplot2", "ggridges", "viridis", "hrbrthemes", "forcats", "tidyr"), ~ usePackage(.x))
-#&gt; Loading Package DT...
-#&gt; Loading required package: DT
-#&gt; Loading Package dplyr...
-#&gt; Loading required package: dplyr
-#&gt; 
-#&gt; Attaching package: 'dplyr'
-#&gt; The following objects are masked from 'package:stats':
-#&gt; 
-#&gt;     filter, lag
-#&gt; The following objects are masked from 'package:base':
-#&gt; 
-#&gt;     intersect, setdiff, setequal, union
-#&gt; Loading Package lubridate...
-#&gt; Loading required package: lubridate
-#&gt; 
-#&gt; Attaching package: 'lubridate'
-#&gt; The following object is masked from 'package:base':
-#&gt; 
-#&gt;     date
-#&gt; Loading Package readr...
-#&gt; Loading required package: readr
-#&gt; Loading Package ggplot2...
-#&gt; Loading required package: ggplot2
-#&gt; Loading Package ggridges...
-#&gt; Loading required package: ggridges
-#&gt; Loading Package viridis...
-#&gt; Loading required package: viridis
-#&gt; Loading required package: viridisLite
-#&gt; Loading Package hrbrthemes...
-#&gt; Loading required package: hrbrthemes
-#&gt; Loading Package forcats...
-#&gt; Loading required package: forcats
-#&gt; Loading Package tidyr...
-#&gt; Loading required package: tidyr</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="kw pkg">purrr</span><span class="kw ns">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">walk</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"DT"</span>, <span class="st">"dplyr"</span>, <span class="st">"lubridate"</span>, <span class="st">"readr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggridges"</span>, <span class="st">"viridis"</span>, <span class="st">"hrbrthemes"</span>, <span class="st">"forcats"</span>, <span class="st">"tidyr"</span>), ~ <span class="fu"><a href="../reference/usePackage.html">usePackage</a></span>(<span class="no">.x</span>))
+<span class="co">#&gt; Loading Package DT...</span>
+<span class="co">#&gt; Loading required package: DT</span>
+<span class="co">#&gt; Loading Package dplyr...</span>
+<span class="co">#&gt; Loading required package: dplyr</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'dplyr'</span>
+<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     filter, lag</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
+<span class="co">#&gt; Loading Package lubridate...</span>
+<span class="co">#&gt; Loading required package: lubridate</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'lubridate'</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     date, intersect, setdiff, union</span>
+<span class="co">#&gt; Loading Package readr...</span>
+<span class="co">#&gt; Loading required package: readr</span>
+<span class="co">#&gt; Loading Package ggplot2...</span>
+<span class="co">#&gt; Loading required package: ggplot2</span>
+<span class="co">#&gt; Loading Package ggridges...</span>
+<span class="co">#&gt; Loading required package: ggridges</span>
+<span class="co">#&gt; Loading Package viridis...</span>
+<span class="co">#&gt; Loading required package: viridis</span>
+<span class="co">#&gt; Loading required package: viridisLite</span>
+<span class="co">#&gt; Loading Package hrbrthemes...</span>
+<span class="co">#&gt; Loading required package: hrbrthemes</span>
+<span class="co">#&gt; Loading Package forcats...</span>
+<span class="co">#&gt; Loading required package: forcats</span>
+<span class="co">#&gt; Loading Package tidyr...</span>
+<span class="co">#&gt; Loading required package: tidyr</span></pre></body></html></div>
 </div>
 <div id="libraries" class="section level2">
 <h2 class="hasAnchor">
@@ -160,129 +163,132 @@ usePackage("dichromat")
 <h4 class="hasAnchor">
 <a href="#silent-and-easy-typing" class="anchor"></a>Silent and easy typing</h4>
 <p>Don’t bother with quotes. Just type your package names in and off you go.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r">libraries(dichromat, jsonlite)
-sessionInfo()
-#&gt; R version 3.6.3 (2020-02-29)
-#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)
-#&gt; Running under: Windows 10 x64 (build 18363)
-#&gt; 
-#&gt; Matrix products: default
-#&gt; 
-#&gt; locale:
-#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   
-#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   
-#&gt; [5] LC_TIME=English_Canada.1252    
-#&gt; 
-#&gt; attached base packages:
-#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
-#&gt; 
-#&gt; other attached packages:
-#&gt;  [1] jsonlite_1.6.1    tidyr_1.0.2       forcats_0.5.0     hrbrthemes_0.8.0 
-#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.0    
-#&gt;  [9] readr_1.3.1       lubridate_1.7.4   dplyr_0.8.5       DT_0.13          
-#&gt; [13] dichromat_2.0-0   utilitarian_0.1.1
-#&gt; 
-#&gt; loaded via a namespace (and not attached):
-#&gt;  [1] tidyselect_1.0.0  xfun_0.12         purrr_0.3.3       colorspace_1.4-1 
-#&gt;  [5] vctrs_0.2.4       htmltools_0.4.0   yaml_2.2.1        rlang_0.4.5      
-#&gt;  [9] pkgdown_1.5.0     pillar_1.4.3      glue_1.3.2        withr_2.1.2      
-#&gt; [13] gdtools_0.2.1     lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
-#&gt; [17] munsell_0.5.0     gtable_0.3.0      htmlwidgets_1.5.1 memoise_1.1.0    
-#&gt; [21] evaluate_0.14     knitr_1.28        extrafont_0.17    fansi_0.4.1      
-#&gt; [25] Rttf2pt1_1.3.8    Rcpp_1.0.4        backports_1.1.5   scales_1.1.0     
-#&gt; [29] desc_1.2.0        fs_1.4.0          systemfonts_0.1.1 gridExtra_2.3    
-#&gt; [33] hms_0.5.3         digest_0.6.25     stringi_1.4.6     rprojroot_1.3-2  
-#&gt; [37] grid_3.6.3        cli_2.0.2         tools_3.6.3       magrittr_1.5     
-#&gt; [41] tibble_3.0.0      crayon_1.3.4      extrafontdb_1.0   pkgconfig_2.0.3  
-#&gt; [45] MASS_7.3-51.5     ellipsis_0.3.0    assertthat_0.2.1  rmarkdown_2.1    
-#&gt; [49] rstudioapi_0.11   R6_2.4.1          compiler_3.6.3</pre></body></html></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/libraries.html">libraries</a></span>(<span class="no">dichromat</span>, <span class="no">jsonlite</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()
+<span class="co">#&gt; R version 3.6.3 (2020-02-29)</span>
+<span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
+<span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   </span>
+<span class="co">#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   </span>
+<span class="co">#&gt; [5] LC_TIME=English_Canada.1252    </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt;  [1] jsonlite_1.7.0    tidyr_1.1.1       forcats_0.5.0     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.2    </span>
+<span class="co">#&gt;  [9] readr_1.3.1       lubridate_1.7.9   dplyr_1.0.0       DT_0.15          </span>
+<span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;  [1] Rcpp_1.0.4.6      plyr_1.8.6        compiler_3.6.3    pillar_1.4.6     </span>
+<span class="co">#&gt;  [5] tools_3.6.3       extrafont_0.17    digest_0.6.25     evaluate_0.14    </span>
+<span class="co">#&gt;  [9] memoise_1.1.0     lifecycle_0.2.0   tibble_3.0.1      gtable_0.3.0     </span>
+<span class="co">#&gt; [13] pkgconfig_2.0.3   rlang_0.4.6       rstudioapi_0.11   yaml_2.2.1       </span>
+<span class="co">#&gt; [17] pkgdown_1.5.1     xfun_0.16         Rttf2pt1_1.3.8    gridExtra_2.3    </span>
+<span class="co">#&gt; [21] withr_2.2.0       stringr_1.4.0     knitr_1.29        systemfonts_0.2.3</span>
+<span class="co">#&gt; [25] gdtools_0.2.2     htmlwidgets_1.5.1 generics_0.0.2    desc_1.2.0       </span>
+<span class="co">#&gt; [29] fs_1.4.1          vctrs_0.3.0       hms_0.5.3         rprojroot_1.3-2  </span>
+<span class="co">#&gt; [33] grid_3.6.3        tidyselect_1.1.0  glue_1.4.1        R6_2.4.1         </span>
+<span class="co">#&gt; [37] rmarkdown_2.3     extrafontdb_1.0   purrr_0.3.4       magrittr_1.5     </span>
+<span class="co">#&gt; [41] backports_1.1.6   scales_1.1.1      htmltools_0.5.0   ellipsis_0.3.1   </span>
+<span class="co">#&gt; [45] MASS_7.3-51.6     assertthat_0.2.1  colorspace_1.4-1  stringi_1.4.6    </span>
+<span class="co">#&gt; [49] munsell_0.5.0     crayon_1.3.4</span></pre></body></html></div>
 </div>
 <div id="quoted" class="section level4">
 <h4 class="hasAnchor">
 <a href="#quoted" class="anchor"></a>Quoted</h4>
 <p>Like <code>library()</code> but better.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r">libraries("dichromat", "jsonlite", quoted = T)
-sessionInfo()
-#&gt; R version 3.6.3 (2020-02-29)
-#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)
-#&gt; Running under: Windows 10 x64 (build 18363)
-#&gt; 
-#&gt; Matrix products: default
-#&gt; 
-#&gt; locale:
-#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   
-#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   
-#&gt; [5] LC_TIME=English_Canada.1252    
-#&gt; 
-#&gt; attached base packages:
-#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
-#&gt; 
-#&gt; other attached packages:
-#&gt;  [1] jsonlite_1.6.1    tidyr_1.0.2       forcats_0.5.0     hrbrthemes_0.8.0 
-#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.0    
-#&gt;  [9] readr_1.3.1       lubridate_1.7.4   dplyr_0.8.5       DT_0.13          
-#&gt; [13] dichromat_2.0-0   utilitarian_0.1.1
-#&gt; 
-#&gt; loaded via a namespace (and not attached):
-#&gt;  [1] tidyselect_1.0.0  xfun_0.12         purrr_0.3.3       colorspace_1.4-1 
-#&gt;  [5] vctrs_0.2.4       htmltools_0.4.0   yaml_2.2.1        rlang_0.4.5      
-#&gt;  [9] pkgdown_1.5.0     pillar_1.4.3      glue_1.3.2        withr_2.1.2      
-#&gt; [13] gdtools_0.2.1     lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
-#&gt; [17] munsell_0.5.0     gtable_0.3.0      htmlwidgets_1.5.1 memoise_1.1.0    
-#&gt; [21] evaluate_0.14     knitr_1.28        extrafont_0.17    fansi_0.4.1      
-#&gt; [25] Rttf2pt1_1.3.8    Rcpp_1.0.4        backports_1.1.5   scales_1.1.0     
-#&gt; [29] desc_1.2.0        fs_1.4.0          systemfonts_0.1.1 gridExtra_2.3    
-#&gt; [33] hms_0.5.3         digest_0.6.25     stringi_1.4.6     rprojroot_1.3-2  
-#&gt; [37] grid_3.6.3        cli_2.0.2         tools_3.6.3       magrittr_1.5     
-#&gt; [41] tibble_3.0.0      crayon_1.3.4      extrafontdb_1.0   pkgconfig_2.0.3  
-#&gt; [45] MASS_7.3-51.5     ellipsis_0.3.0    assertthat_0.2.1  rmarkdown_2.1    
-#&gt; [49] rstudioapi_0.11   R6_2.4.1          compiler_3.6.3</pre></body></html></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/libraries.html">libraries</a></span>(<span class="st">"dichromat"</span>, <span class="st">"jsonlite"</span>, <span class="kw">quoted</span> <span class="kw">=</span> <span class="no">T</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()
+<span class="co">#&gt; R version 3.6.3 (2020-02-29)</span>
+<span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
+<span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   </span>
+<span class="co">#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   </span>
+<span class="co">#&gt; [5] LC_TIME=English_Canada.1252    </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt;  [1] jsonlite_1.7.0    tidyr_1.1.1       forcats_0.5.0     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.2    </span>
+<span class="co">#&gt;  [9] readr_1.3.1       lubridate_1.7.9   dplyr_1.0.0       DT_0.15          </span>
+<span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;  [1] Rcpp_1.0.4.6      plyr_1.8.6        compiler_3.6.3    pillar_1.4.6     </span>
+<span class="co">#&gt;  [5] tools_3.6.3       extrafont_0.17    digest_0.6.25     evaluate_0.14    </span>
+<span class="co">#&gt;  [9] memoise_1.1.0     lifecycle_0.2.0   tibble_3.0.1      gtable_0.3.0     </span>
+<span class="co">#&gt; [13] pkgconfig_2.0.3   rlang_0.4.6       rstudioapi_0.11   yaml_2.2.1       </span>
+<span class="co">#&gt; [17] pkgdown_1.5.1     xfun_0.16         Rttf2pt1_1.3.8    gridExtra_2.3    </span>
+<span class="co">#&gt; [21] withr_2.2.0       stringr_1.4.0     knitr_1.29        systemfonts_0.2.3</span>
+<span class="co">#&gt; [25] gdtools_0.2.2     htmlwidgets_1.5.1 generics_0.0.2    desc_1.2.0       </span>
+<span class="co">#&gt; [29] fs_1.4.1          vctrs_0.3.0       hms_0.5.3         rprojroot_1.3-2  </span>
+<span class="co">#&gt; [33] grid_3.6.3        tidyselect_1.1.0  glue_1.4.1        R6_2.4.1         </span>
+<span class="co">#&gt; [37] rmarkdown_2.3     extrafontdb_1.0   purrr_0.3.4       magrittr_1.5     </span>
+<span class="co">#&gt; [41] backports_1.1.6   scales_1.1.1      htmltools_0.5.0   ellipsis_0.3.1   </span>
+<span class="co">#&gt; [45] MASS_7.3-51.6     assertthat_0.2.1  colorspace_1.4-1  stringi_1.4.6    </span>
+<span class="co">#&gt; [49] munsell_0.5.0     crayon_1.3.4</span></pre></body></html></div>
 </div>
 <div id="quoted-in-a-character-vector" class="section level4">
 <h4 class="hasAnchor">
 <a href="#quoted-in-a-character-vector" class="anchor"></a>Quoted in a Character Vector</h4>
 <p>Like <code>library()</code> but <em>even</em> better.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r">mypkgs  R version 3.6.3 (2020-02-29)
-#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)
-#&gt; Running under: Windows 10 x64 (build 18363)
-#&gt; 
-#&gt; Matrix products: default
-#&gt; 
-#&gt; locale:
-#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   
-#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   
-#&gt; [5] LC_TIME=English_Canada.1252    
-#&gt; 
-#&gt; attached base packages:
-#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
-#&gt; 
-#&gt; other attached packages:
-#&gt;  [1] jsonlite_1.6.1    tidyr_1.0.2       forcats_0.5.0     hrbrthemes_0.8.0 
-#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.0    
-#&gt;  [9] readr_1.3.1       lubridate_1.7.4   dplyr_0.8.5       DT_0.13          
-#&gt; [13] dichromat_2.0-0   utilitarian_0.1.1
-#&gt; 
-#&gt; loaded via a namespace (and not attached):
-#&gt;  [1] tidyselect_1.0.0  xfun_0.12         purrr_0.3.3       colorspace_1.4-1 
-#&gt;  [5] vctrs_0.2.4       htmltools_0.4.0   yaml_2.2.1        rlang_0.4.5      
-#&gt;  [9] pkgdown_1.5.0     pillar_1.4.3      glue_1.3.2        withr_2.1.2      
-#&gt; [13] gdtools_0.2.1     lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
-#&gt; [17] munsell_0.5.0     gtable_0.3.0      htmlwidgets_1.5.1 memoise_1.1.0    
-#&gt; [21] evaluate_0.14     knitr_1.28        extrafont_0.17    fansi_0.4.1      
-#&gt; [25] Rttf2pt1_1.3.8    Rcpp_1.0.4        backports_1.1.5   scales_1.1.0     
-#&gt; [29] desc_1.2.0        fs_1.4.0          systemfonts_0.1.1 gridExtra_2.3    
-#&gt; [33] hms_0.5.3         digest_0.6.25     stringi_1.4.6     rprojroot_1.3-2  
-#&gt; [37] grid_3.6.3        cli_2.0.2         tools_3.6.3       magrittr_1.5     
-#&gt; [41] tibble_3.0.0      crayon_1.3.4      extrafontdb_1.0   pkgconfig_2.0.3  
-#&gt; [45] MASS_7.3-51.5     ellipsis_0.3.0    assertthat_0.2.1  rmarkdown_2.1    
-#&gt; [49] rstudioapi_0.11   R6_2.4.1          compiler_3.6.3</pre></body></html></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">mypkgs</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"dichromat"</span>, <span class="st">"jsonlite"</span>)
+<span class="fu"><a href="../reference/libraries.html">libraries</a></span>(<span class="no">mypkgs</span>, <span class="kw">quoted</span> <span class="kw">=</span> <span class="no">T</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()
+<span class="co">#&gt; R version 3.6.3 (2020-02-29)</span>
+<span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
+<span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] LC_COLLATE=English_Canada.1252  LC_CTYPE=English_Canada.1252   </span>
+<span class="co">#&gt; [3] LC_MONETARY=English_Canada.1252 LC_NUMERIC=C                   </span>
+<span class="co">#&gt; [5] LC_TIME=English_Canada.1252    </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt;  [1] jsonlite_1.7.0    tidyr_1.1.1       forcats_0.5.0     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.2    ggplot2_3.3.2    </span>
+<span class="co">#&gt;  [9] readr_1.3.1       lubridate_1.7.9   dplyr_1.0.0       DT_0.15          </span>
+<span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;  [1] Rcpp_1.0.4.6      plyr_1.8.6        compiler_3.6.3    pillar_1.4.6     </span>
+<span class="co">#&gt;  [5] tools_3.6.3       extrafont_0.17    digest_0.6.25     evaluate_0.14    </span>
+<span class="co">#&gt;  [9] memoise_1.1.0     lifecycle_0.2.0   tibble_3.0.1      gtable_0.3.0     </span>
+<span class="co">#&gt; [13] pkgconfig_2.0.3   rlang_0.4.6       rstudioapi_0.11   yaml_2.2.1       </span>
+<span class="co">#&gt; [17] pkgdown_1.5.1     xfun_0.16         Rttf2pt1_1.3.8    gridExtra_2.3    </span>
+<span class="co">#&gt; [21] withr_2.2.0       stringr_1.4.0     knitr_1.29        systemfonts_0.2.3</span>
+<span class="co">#&gt; [25] gdtools_0.2.2     htmlwidgets_1.5.1 generics_0.0.2    desc_1.2.0       </span>
+<span class="co">#&gt; [29] fs_1.4.1          vctrs_0.3.0       hms_0.5.3         rprojroot_1.3-2  </span>
+<span class="co">#&gt; [33] grid_3.6.3        tidyselect_1.1.0  glue_1.4.1        R6_2.4.1         </span>
+<span class="co">#&gt; [37] rmarkdown_2.3     extrafontdb_1.0   purrr_0.3.4       magrittr_1.5     </span>
+<span class="co">#&gt; [41] backports_1.1.6   scales_1.1.1      htmltools_0.5.0   ellipsis_0.3.1   </span>
+<span class="co">#&gt; [45] MASS_7.3-51.6     assertthat_0.2.1  colorspace_1.4-1  stringi_1.4.6    </span>
+<span class="co">#&gt; [49] munsell_0.5.0     crayon_1.3.4</span></pre></body></html></div>
 </div>
 <div id="unquote-or-quoted-but-with-verbose-feedback" class="section level4">
 <h4 class="hasAnchor">
 <a href="#unquote-or-quoted-but-with-verbose-feedback" class="anchor"></a>Unquote or Quoted but with Verbose Feedback</h4>
 <p>Because you like R to talk back.</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r">libraries(dichromat, verbose = TRUE)
-#&gt; Attached packages: dichromat</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="../reference/libraries.html">libraries</a></span>(<span class="no">dichromat</span>, <span class="kw">verbose</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt; Attached packages: dichromat</span></pre></body></html></div>
 </div>
 </div>
 </div>
@@ -303,7 +309,7 @@ sessionInfo()
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

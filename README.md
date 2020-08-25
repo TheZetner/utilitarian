@@ -41,3 +41,20 @@ _Sources listed if written by other than Adrian_
 
   * `%notin%`
       - Not In. Find out what's in one vector and... not in another.
+      
+**Sciences**
+
+  * `compareSeq()`
+      - Produces a table showing all the variants between two DNAString objects
+  
+  * `read_sam()`
+      - Read in SAM file as tibble
+
+  * `tidy_cigar()`
+      - Split and tidy CIGARS from read_sam's tibble. Groups by QNAME and RNAME
+      
+  * `plot_cigar()`
+      - Plot one Query's CIGAR data, facet by RNAME, and colour by Operation
+
+  * `plot_all_cigars()`
+      - Plot all Queries from tidied cigar table, facet by Reference, and colour by Operation

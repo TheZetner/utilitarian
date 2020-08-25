@@ -1,7 +1,7 @@
 Package: utilitarian
 Type: Package
 Title: Utilitarian: A Selection of Useful R Functions
-Version: 0.1.1
+Version: 0.1.2
 Author: Adrian Zetner
 Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
 Description: Functions and Addins to make youR life better
@@ -9,9 +9,16 @@ URL: https://thezetner.github.io/utilitarian/, https://github.com/TheZetner/util
 License: Apache License 2.0
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr
-RoxygenNote: 7.1.0
+Imports: 
+    dplyr,
+    readr,
+    ggplot2,
+    purrr,
+    tibble,
+    tidyr
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown
-
+Depends: 
+    R (>= 2.10)
