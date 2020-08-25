@@ -8,7 +8,7 @@
 > *Utilitarian Functions:*  
 > A function is worthwhile if it leads to the most usefulness for the greatest number of users.
 
-_utilitarian_ is a package "full" of useful R functions that reduce the day to day pain of using R as experienced by its author.
+_utilitarian_ is a package 'full' of useful R functions that reduce the day to day pain of using R as experienced by its author.
 
 ### Installation
 
