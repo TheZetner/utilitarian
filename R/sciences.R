@@ -67,8 +67,8 @@ tidy_cigar <- function(x){
     mutate(CIGARPOS2 = lag(CIGARPOS)+1) %>%
     replace_na(list(CIGARPOS2 = 1)) %>%
     rename(CIGARstart = CIGARPOS2, CIGARend = CIGARPOS) %>%
-    mutate(POSstart = POS + CIGARstart - 1,
-           POSend = POS + CIGARend - 1) %>%
+    mutate(POSstart = POS + CIGARstart,
+           POSend = POS + CIGARend) %>%
     left_join(ops, by = c("B" = "operation")) %>%
     filter(!is.na(Operation)) %>%
     select(QNAME, RNAME, MAPQ, POS, POSstart, POSend, CIGARstart, CIGARend, Operation)
@@ -92,7 +92,8 @@ plot_cigar <- function(x, qname){
     filter(QNAME == qname) %>%
     group_by(RNAME, POS) %>%
     ggplot(aes(y = Operation)) +
-    geom_segment(aes(yend = Operation, x = CIGARstart, xend = CIGARend, colour = Operation), size = 4) +
+    geom_segment(aes(yend = Operation, x = CIGARstart-0.5, xend = CIGARend+0.5, colour = Operation), size = 2) +
+    scale_x_continuous(breaks = c(1, seq(5, max(x$CIGARend), by = 5), max(x$CIGARend)), minor_breaks = c(1, seq(5, max(x$CIGARend), by = 5))) +
     facet_grid(RNAME + POS ~ ., scales = "free", labeller = label_both) +
     labs(x = "Cigar Position",
          y = "Operation",
