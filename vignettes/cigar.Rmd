@@ -51,9 +51,9 @@ toy.tc
 
 ## Plot a CIGAR
 
-Plotting a cigar from a single read in the tidied cigar table is done using `plot_cigar()` and specifying the read. Plots are facetted based on the references. Returns a plot. 
+Plotting a cigar from a single read in the tidied cigar table is done using `plot_cigar()` and specifying the read. Plots are facetted based on the references and the mapped position of the read. Returns a plot. 
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 plot_cigar(toy.tc, "r002")
 ```
 
@@ -61,10 +61,16 @@ plot_cigar(toy.tc, "r002")
 
 A wrapper around calling `plot_cigar()` on all the reads in the SAM file. Will warn and stop if more than 20 elements to be created, override this with the `lg=TRUE` argument.
 
-```{r fig_width=6}
+```{r fig.width=8, message=FALSE, warning=FALSE}
 p <- plot_all_cigars(toy.tc)
 
-p[[1]]
-p[[2]]
+toy[toy$QNAME == "r001", "CIGAR"]
+p[["r001"]]
+```
+
+
+```{r fig.width=8, message=FALSE, warning=FALSE}
+toy[toy$QNAME == "x3", "CIGAR"]
+p[["x3"]]
 
 ```

@@ -49,7 +49,7 @@ _Sources listed if written by other than Adrian_
   
   * `read_sam()`
       - Read in SAM file as tibble
-
+      
   * `tidy_cigar()`
       - Split and tidy CIGARS from read_sam's tibble. Groups by QNAME and RNAME
       
@@ -58,3 +58,6 @@ _Sources listed if written by other than Adrian_
 
   * `plot_all_cigars()`
       - Plot all Queries from tidied cigar table, facet by Reference, and colour by Operation
+      
+  * `sam_to_fasta()`
+      - Write SAM Query sequences to file as fasta with with QNAME as identifier

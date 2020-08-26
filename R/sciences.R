@@ -57,20 +57,21 @@ read_sam <- function(file){
 
 tidy_cigar <- function(x){
   x %>%
-    select(QNAME, RNAME, MAPQ, CIGAR) %>%
+    select(QNAME, RNAME, POS, MAPQ, CIGAR) %>%
     mutate(CIGAR2 = strsplit(CIGAR, "(?<=[MIDNSHP=X])", perl = T)) %>%
     unnest(CIGAR2) %>%
     separate(CIGAR2, into=c("A","B"), sep = -1) %>%
-    group_by(QNAME, RNAME) %>%
+    group_by(QNAME, RNAME, POS) %>%
     mutate(CIGARPOS = cumsum(A)) %>%
-    do(add_row(., QNAME = unique(.$QNAME), RNAME = first(.$RNAME, 1), MAPQ = first(.$MAPQ, 1), CIGAR = first(.$CIGAR, 1), A = first(.$A, 1), B = first(.$B, 1), CIGARPOS = 1)) %>%
-    arrange(QNAME, CIGARPOS) %>%
-    mutate(CIGARPOS2 = lag(CIGARPOS)) %>%
-    filter(!is.na(CIGARPOS2)) %>%
+    arrange(QNAME, RNAME, POS, CIGARPOS) %>%
+    mutate(CIGARPOS2 = lag(CIGARPOS)+1) %>%
+    replace_na(list(CIGARPOS2 = 1)) %>%
     rename(CIGARstart = CIGARPOS2, CIGARend = CIGARPOS) %>%
-    select(QNAME, RNAME, MAPQ, CIGARstart, CIGARend, operation = B) %>%
-    left_join(ops, by = "operation") %>%
-    filter(!is.na(Operation))
+    mutate(POSstart = POS + CIGARstart - 1,
+           POSend = POS + CIGARend - 1) %>%
+    left_join(ops, by = c("B" = "operation")) %>%
+    filter(!is.na(Operation)) %>%
+    select(QNAME, RNAME, MAPQ, POS, POSstart, POSend, CIGARstart, CIGARend, Operation)
 }
 
 
@@ -89,12 +90,12 @@ tidy_cigar <- function(x){
 plot_cigar <- function(x, qname){
   x %>%
     filter(QNAME == qname) %>%
-    ggplot(aes(x = Operation)) +
-    geom_segment(aes(xend = Operation, y = CIGARstart, yend = CIGARend, colour = Operation), size = 4) +
-    facet_grid(RNAME ~ ., scales = "free") +
-    coord_flip() +
-    labs(y = "Cigar Position",
-         x = "Operation",
+    group_by(RNAME, POS) %>%
+    ggplot(aes(y = Operation)) +
+    geom_segment(aes(yend = Operation, x = CIGARstart, xend = CIGARend, colour = Operation), size = 4) +
+    facet_grid(RNAME + POS ~ ., scales = "free", labeller = label_both) +
+    labs(x = "Cigar Position",
+         y = "Operation",
          title = qname)
 }
 
@@ -115,7 +116,26 @@ plot_all_cigars <- function(x, lg = F){
   if(n_distinct(x$QNAME) > 20 & lg == FALSE){return(message("Are you sure you want to create ", n_distinct(x$QNAME), " plots? Use argument lg=TRUE or filter your reads."))}
   p <- x %>%
     group_by(QNAME) %>%
-    group_map(~ plot_cigar(.x, unique(.y)), .keep=T)
-  p
+    group_map(~ plot_cigar(.x, first(.y)), .keep=T)
+  set_names(p, unique(x$QNAME))
 }
 
+
+
+#' Write SAM to Fasta file
+#'
+#' Write Query sequences to file as fasta with with QNAME as identifier
+#'
+#' @param x SAM file in tabular format (eg. as read by read_sam())
+#' @param file Path to output file
+#' @return Nothing. File written to disk
+#'
+#' @import readr
+#'
+#' @export
+sam_to_fasta <- function(x, file){
+
+  seqs <- paste(">", x$QNAME, "\n", x$SEQ, "\n", sep = "")
+  write_lines(seqs, file)
+
+}
