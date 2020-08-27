@@ -93,7 +93,6 @@ plot_cigar <- function(x, qname){
     group_by(RNAME, POS) %>%
     ggplot(aes(y = Operation)) +
     geom_segment(aes(yend = Operation, x = CIGARstart-0.5, xend = CIGARend+0.5, colour = Operation), size = 2) +
-    scale_x_continuous(breaks = c(1, seq(5, max(x$CIGARend), by = 5), max(x$CIGARend)), minor_breaks = c(1, seq(5, max(x$CIGARend), by = 5))) +
     facet_grid(RNAME + POS ~ ., scales = "free", labeller = label_both) +
     labs(x = "Cigar Position",
          y = "Operation",
