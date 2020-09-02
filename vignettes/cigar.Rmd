@@ -74,3 +74,28 @@ toy[toy$QNAME == "x3", "CIGAR"]
 p[["x3"]]
 
 ```
+
+
+# Postscript
+
+SAM headers contain useful information but for the purposes of cigar visualization they are ignored. Having access to them can be helpful so there is an included function to pull headers (as I couldn't figure out a way to do so with readr).
+
+## Show Reference Lengths
+
+```{r Headers, message=FALSE, warning=FALSE}
+
+h <- read_sam_headers(system.file("extdata", "toy.sam", package = "utilitarian"))
+
+h$References
+
+```
+
+
+## Show Command line params and software details
+
+```{r Headers2, message=FALSE, warning=FALSE}
+
+h$Mapping
+
+
+```

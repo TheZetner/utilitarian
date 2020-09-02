@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • utilitarian</title>
+<title>Read SAM Headers — read_sam_headers • utilitarian</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Read SAM Headers — read_sam_headers" />
+<meta property="og:description" content="Read in SAM file headers as list of two tibbles: one with reference names and lengths, the other with mapping info" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -128,126 +129,33 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Read SAM Headers</h1>
+    <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/sciences.R'><code>R/sciences.R</code></a></small>
+    <div class="hidden name"><code>read_sam_headers.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Read in SAM file headers as list of two tibbles: one with reference names and lengths, the other with mapping info</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>read_sam_headers</span>(<span class='no'>file</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="compareSeq.html">compareSeq()</a></code> </p>
-        </td>
-        <td><p>Compare Sequences</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="grapes-notin-grapes.html">`%notin%`</a></code> </p>
-        </td>
-        <td><p>Not In</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="insertGlimpseAddin.html">insertGlimpseAddin()</a></code> </p>
-        </td>
-        <td><p>Insert %&gt;% glimpse() at cursor position</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="insertViewAddin.html">insertViewAddin()</a></code> </p>
-        </td>
-        <td><p>Insert %&gt;% View() at cursor position</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="libraries.html">libraries()</a></code> </p>
-        </td>
-        <td><p>Call multiple library statements at once</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="normalize.html">normalize()</a></code> </p>
-        </td>
-        <td><p>Normalize</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ops.html">ops</a></code> </p>
-        </td>
-        <td><p>Plain English CIGAR Operation Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_all_cigars.html">plot_all_cigars()</a></code> </p>
-        </td>
-        <td><p>Plot All CIGARs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_cigar.html">plot_cigar()</a></code> </p>
-        </td>
-        <td><p>Plot CIGAR</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_sam.html">read_sam()</a></code> </p>
-        </td>
-        <td><p>Read SAM</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_sam_headers.html">read_sam_headers()</a></code> </p>
-        </td>
-        <td><p>Read SAM Headers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="samcols.html">samcols</a></code> </p>
-        </td>
-        <td><p>Plain English CIGAR Operation Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sam_to_fasta.html">sam_to_fasta()</a></code> </p>
-        </td>
-        <td><p>Write SAM to Fasta file</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tidy_cigar.html">tidy_cigar()</a></code> </p>
-        </td>
-        <td><p>Tidy CIGAR Data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="usePackage.html">usePackage()</a></code> </p>
-        </td>
-        <td><p>Package installing and loading function</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>file</th>
+      <td><p>path to file</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>List of two tibbles: References (RNAME/LENGTH) and Mapping (ID/PN/VN/CL)</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

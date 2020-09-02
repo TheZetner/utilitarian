@@ -8,7 +8,7 @@
 > *Utilitarian Functions:*  
 > A function is worthwhile if it leads to the most usefulness for the greatest number of users.
 
-_utilitarian_ is a package 'full' of useful R functions that reduce the day to day pain of using R as experienced by its author.
+_utilitarian_ is a package 'full' of useful R functions that reduce the day to day pain of using R as experienced by its author. Most of these functions are the result of searching for and not finding exactly what was needed and doing it myself. In the words of a certain pipe-bending robot: "Yeah, well, I'm gonna go build my own *R package*! With blackjack! And hookers! In fact, forget the *R package*!"
 
 ### Installation
 
@@ -50,6 +50,9 @@ _Sources listed if written by other than Adrian_
   * `read_sam()`
       - Read in SAM file as tibble
       
+  * `read_sam_headers()`
+      - Read in SAM file headers as list of two tables: reference lengths and mapping information. 
+            
   * `tidy_cigar()`
       - Split and tidy CIGARS from read_sam's tibble. Groups by QNAME and RNAME
       

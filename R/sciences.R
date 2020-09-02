@@ -43,6 +43,42 @@ read_sam <- function(file){
              trim_ws = TRUE)
 }
 
+#' Read SAM Headers
+#'
+#' Read in SAM file headers as list of two tibbles: one with reference names and lengths, the other with mapping info
+#'
+#' @param file path to file
+#' @return List of two tibbles: References (RNAME/LENGTH) and Mapping (ID/PN/VN/CL)
+#'
+#' @import dplyr tibble tidyr
+#'
+#' @export
+
+read_sam_headers <- function(file){
+  # Reference Lengths
+  gpc <- paste("grep", " '^@SQ' ", file, sep = "")
+  con <- pipe(gpc)
+  x1 <- tibble::tibble(X = readLines(con)) %>%
+    tidyr::separate(X, into = c("t1", "name", "Length"), sep = "N:") %>%
+    dplyr::select(-t1) %>%
+    tidyr::separate(name, into = c("Name", "t1"), sep = "\t") %>%
+    dplyr::select(-t1)
+  close(con)
+
+  # Mapping Deets
+  gpc <- paste("grep", " '^@PG' ", file, sep = "")
+  con <- pipe(gpc)
+  x2 <- tibble::tibble(X = readLines(con)) %>%
+    tidyr::separate(X, into = c("t1", "ID", "PN", "VN", "CL"), sep = "\t") %>%
+    dplyr::select(-t1) %>%
+    dplyr::mutate(dplyr::across(.cols = everything(),
+                                .fns = ~ stringr::str_replace(.x, ".*:", "")))
+
+  list(References = x1,
+       Mapping = x2)
+}
+
+
 
 #' Tidy CIGAR Data
 #'

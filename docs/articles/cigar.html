@@ -184,6 +184,34 @@
 <span class="no">p</span><span class="kw">[[</span><span class="st">"x3"</span>]]</pre></body></html></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-6-1.png" width="768"></p>
 </div>
+<div id="postscript" class="section level1">
+<h1 class="hasAnchor">
+<a href="#postscript" class="anchor"></a>Postscript</h1>
+<p>SAM headers contain useful information but for the purposes of cigar visualization they are ignored. Having access to them can be helpful so there is an included function to pull headers (as I couldn’t figure out a way to do so with readr).</p>
+<div id="show-reference-lengths" class="section level2">
+<h2 class="hasAnchor">
+<a href="#show-reference-lengths" class="anchor"></a>Show Reference Lengths</h2>
+<div class="sourceCode" id="cb7"><html><body><pre class="r">
+<span class="no">h</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_sam_headers.html">read_sam_headers</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"utilitarian"</span>))
+
+<span class="no">h</span>$<span class="no">References</span>
+<span class="co">#&gt; # A tibble: 2 x 2</span>
+<span class="co">#&gt;   Name  Length</span>
+<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; </span>
+<span class="co">#&gt; 1 ref   45    </span>
+<span class="co">#&gt; 2 ref2  40</span></pre></body></html></div>
+</div>
+<div id="show-command-line-params-and-software-details" class="section level2">
+<h2 class="hasAnchor">
+<a href="#show-command-line-params-and-software-details" class="anchor"></a>Show Command line params and software details</h2>
+<div class="sourceCode" id="cb8"><html><body><pre class="r">
+<span class="no">h</span>$<span class="no">Mapping</span>
+<span class="co">#&gt; # A tibble: 1 x 4</span>
+<span class="co">#&gt;   ID       PN      VN       CL                                                  </span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;                                               </span>
+<span class="co">#&gt; 1 minimap2 minima~ 2.17-r9~ minimap2 -t 64 -ax map-ont -o toy.sam toybox.fasta.~</span></pre></body></html></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
