@@ -11,7 +11,7 @@
 #' @source \url{https://drive5.com/usearch/manual/cigar.html}
 "ops"
 
-#' Plain English CIGAR Operation Names
+#' Plain English SAM Column Names
 #'
 #' A dataset containing the columns of a SAM file
 #'
