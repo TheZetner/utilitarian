@@ -89,7 +89,7 @@ x - min(x)) / (max(x) - min(x)" />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -115,7 +115,7 @@ x - min(x)) / (max(x) - min(x)" />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/TheZetner/utilitarian/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -142,7 +142,7 @@ x - min(x)) / (max(x) - min(x)" />
 x - min(x)) / (max(x) - min(x)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>normalize</span>(<span class='no'>x</span>, <span class='kw'>newlims</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))</pre>
+    <pre class="usage"><span class='fu'>normalize</span><span class='op'>(</span><span class='va'>x</span>, newlims <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,11 +162,13 @@ x - min(x)) / (max(x) - min(x)</p>
     <p>Normalized vector of values to newmax and newmin</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>normalize</span>(<span class='no'>mtcars</span>$<span class='no'>mpg</span>)</div><div class='output co'>#&gt;  [1] 0.4510638 0.4510638 0.5276596 0.4680851 0.3531915 0.3276596 0.1659574
+    <pre class="examples"><div class='input'><span class='fu'>normalize</span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>$</span><span class='va'>mpg</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] 0.4510638 0.4510638 0.5276596 0.4680851 0.3531915 0.3276596 0.1659574
 #&gt;  [8] 0.5957447 0.5276596 0.3744681 0.3148936 0.2553191 0.2936170 0.2042553
 #&gt; [15] 0.0000000 0.0000000 0.1829787 0.9361702 0.8510638 1.0000000 0.4723404
 #&gt; [22] 0.2170213 0.2042553 0.1234043 0.3744681 0.7191489 0.6638298 0.8510638
-#&gt; [29] 0.2297872 0.3957447 0.1957447 0.4680851</div><div class='input'><span class='fu'>normalize</span>(<span class='no'>mtcars</span>$<span class='no'>mpg</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5</span>, <span class='fl'>10</span>))</div><div class='output co'>#&gt;  [1]  7.255319  7.255319  7.638298  7.340426  6.765957  6.638298  5.829787
+#&gt; [29] 0.2297872 0.3957447 0.1957447 0.4680851</div><div class='input'><span class='fu'>normalize</span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>$</span><span class='va'>mpg</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>5</span>, <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1]  7.255319  7.255319  7.638298  7.340426  6.765957  6.638298  5.829787
 #&gt;  [8]  7.978723  7.638298  6.872340  6.574468  6.276596  6.468085  6.021277
 #&gt; [15]  5.000000  5.000000  5.914894  9.680851  9.255319 10.000000  7.361702
 #&gt; [22]  6.085106  6.021277  5.617021  6.872340  8.595745  8.319149  9.255319
@@ -186,7 +188,7 @@ x - min(x)) / (max(x) - min(x)</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

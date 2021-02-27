@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -72,7 +72,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/TheZetner/utilitarian/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -86,7 +86,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="cigar_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>CIGAR Visualization</h1>
@@ -102,10 +102,11 @@
 <div id="read-in-sam-files-as-tibble" class="section level2">
 <h2 class="hasAnchor">
 <a href="#read-in-sam-files-as-tibble" class="anchor"></a>Read in SAM files as tibble</h2>
-<div class="sourceCode" id="cb1"><html><body><pre class="r">
-<span class="no">toy</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_sam.html">read_sam</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"utilitarian"</span>))
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">toy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam.html">read_sam</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">toy</span>
+<span class="va">toy</span>
 <span class="co">#&gt; # A tibble: 13 x 11</span>
 <span class="co">#&gt;    QNAME  FLAG RNAME   POS  MAPQ CIGAR    RNEXT PNEXT  TLEN SEQ        QUAL     </span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    </span>
@@ -121,7 +122,7 @@
 <span class="co">#&gt; 10 x4        0 ref2     10    30 25M      *         0     0 CaaaTaatt~ ????????~</span>
 <span class="co">#&gt; 11 x5        0 ref2     12    30 24M      *         0     0 aaTaattaa~ ????????~</span>
 <span class="co">#&gt; 12 x6        0 ref2     14    30 23M      *         0     0 Taattaagt~ ????????~</span>
-<span class="co">#&gt; 13 x3        0 ref      22    30 4S5M2I2~ *         0     0 ttataaaac~ ????????~</span></pre></body></html></div>
+<span class="co">#&gt; 13 x3        0 ref      22    30 4S5M2I2~ *         0     0 ttataaaac~ ????????~</span></code></pre></div>
 </div>
 <div id="create-tidy-cigar-data" class="section level2">
 <h2 class="hasAnchor">
@@ -134,10 +135,11 @@
                            TRUE ~ "human")) %&gt;% 
   tidy_cigar()
                            </code></pre>
-<div class="sourceCode" id="cb3"><html><body><pre class="r">
-<span class="no">toy.tc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tidy_cigar.html">tidy_cigar</a></span>(<span class="no">toy</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">toy.tc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/tidy_cigar.html">tidy_cigar</a></span><span class="op">(</span><span class="va">toy</span><span class="op">)</span>
 
-<span class="no">toy.tc</span>
+<span class="va">toy.tc</span>
 <span class="co">#&gt; # A tibble: 39 x 9</span>
 <span class="co">#&gt; # Groups:   QNAME, RNAME, POS [13]</span>
 <span class="co">#&gt;    QNAME RNAME  MAPQ   POS POSstart POSend CIGARstart CIGARend Operation</span>
@@ -152,36 +154,39 @@
 <span class="co">#&gt;  8 r001  ref      30    37       52     57         15       20 Soft Clip</span>
 <span class="co">#&gt;  9 r002  ref      30     9       10     10          1        1 Soft Clip</span>
 <span class="co">#&gt; 10 r002  ref      30     9       11     12          2        3 Insertion</span>
-<span class="co">#&gt; # ... with 29 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # ... with 29 more rows</span></code></pre></div>
 </div>
 <div id="plot-a-cigar" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plot-a-cigar" class="anchor"></a>Plot a CIGAR</h2>
 <p>Plotting a cigar from a single read in the tidied cigar table is done using <code><a href="../reference/plot_cigar.html">plot_cigar()</a></code> and specifying the read. Plots are facetted based on the references and the mapped position of the read. Returns a plot.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_cigar.html">plot_cigar</a></span>(<span class="no">toy.tc</span>, <span class="st">"r002"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plot_cigar.html">plot_cigar</a></span><span class="op">(</span><span class="va">toy.tc</span>, <span class="st">"r002"</span><span class="op">)</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
 <div id="plot-all-cigars" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plot-all-cigars" class="anchor"></a>Plot all CIGARs</h2>
 <p>A wrapper around calling <code><a href="../reference/plot_cigar.html">plot_cigar()</a></code> on all the reads in the SAM file. Will warn and stop if more than 20 elements to be created, override this with the <code>lg=TRUE</code> argument.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">p</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/plot_all_cigars.html">plot_all_cigars</a></span>(<span class="no">toy.tc</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plot_all_cigars.html">plot_all_cigars</a></span><span class="op">(</span><span class="va">toy.tc</span><span class="op">)</span>
 
-<span class="no">toy</span>[<span class="no">toy</span>$<span class="no">QNAME</span> <span class="kw">==</span> <span class="st">"r001"</span>, <span class="st">"CIGAR"</span>]
+<span class="va">toy</span><span class="op">[</span><span class="va">toy</span><span class="op">$</span><span class="va">QNAME</span> <span class="op">==</span> <span class="st">"r001"</span>, <span class="st">"CIGAR"</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 2 x 1</span>
 <span class="co">#&gt;   CIGAR     </span>
 <span class="co">#&gt;   &lt;chr&gt;     </span>
 <span class="co">#&gt; 1 8M4I4M1D3M</span>
 <span class="co">#&gt; 2 5S9M6S</span>
-<span class="no">p</span><span class="kw">[[</span><span class="st">"r001"</span>]]</pre></body></html></div>
+<span class="va">p</span><span class="op">[[</span><span class="st">"r001"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-5-1.png" width="768"></p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">toy</span>[<span class="no">toy</span>$<span class="no">QNAME</span> <span class="kw">==</span> <span class="st">"x3"</span>, <span class="st">"CIGAR"</span>]
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">toy</span><span class="op">[</span><span class="va">toy</span><span class="op">$</span><span class="va">QNAME</span> <span class="op">==</span> <span class="st">"x3"</span>, <span class="st">"CIGAR"</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 2 x 1</span>
 <span class="co">#&gt;   CIGAR       </span>
 <span class="co">#&gt;   &lt;chr&gt;       </span>
 <span class="co">#&gt; 1 9M4I13M     </span>
 <span class="co">#&gt; 2 4S5M2I2D8M5S</span>
-<span class="no">p</span><span class="kw">[[</span><span class="st">"x3"</span>]]</pre></body></html></div>
+<span class="va">p</span><span class="op">[[</span><span class="st">"x3"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-6-1.png" width="768"></p>
 </div>
 <div id="postscript" class="section level1">
@@ -191,25 +196,22 @@
 <div id="show-reference-lengths" class="section level2">
 <h2 class="hasAnchor">
 <a href="#show-reference-lengths" class="anchor"></a>Show Reference Lengths</h2>
-<div class="sourceCode" id="cb7"><html><body><pre class="r">
-<span class="no">h</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read_sam_headers.html">read_sam_headers</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"utilitarian"</span>))
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">h</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam_headers.html">read_sam_headers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">h</span>$<span class="no">References</span>
-<span class="co">#&gt; # A tibble: 2 x 2</span>
-<span class="co">#&gt;   Name  Length</span>
-<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; </span>
-<span class="co">#&gt; 1 ref   45    </span>
-<span class="co">#&gt; 2 ref2  40</span></pre></body></html></div>
+<span class="va">h</span><span class="op">$</span><span class="va">References</span>
+<span class="co">#&gt; # A tibble: 0 x 2</span>
+<span class="co">#&gt; # ... with 2 variables: Name &lt;chr&gt;, Length &lt;chr&gt;</span></code></pre></div>
 </div>
 <div id="show-command-line-params-and-software-details" class="section level2">
 <h2 class="hasAnchor">
 <a href="#show-command-line-params-and-software-details" class="anchor"></a>Show Command line params and software details</h2>
-<div class="sourceCode" id="cb8"><html><body><pre class="r">
-<span class="no">h</span>$<span class="no">Mapping</span>
-<span class="co">#&gt; # A tibble: 1 x 4</span>
-<span class="co">#&gt;   ID       PN      VN       CL                                                  </span>
-<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;                                               </span>
-<span class="co">#&gt; 1 minimap2 minima~ 2.17-r9~ minimap2 -t 64 -ax map-ont -o toy.sam toybox.fasta.~</span></pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">h</span><span class="op">$</span><span class="va">Mapping</span>
+<span class="co">#&gt; # A tibble: 0 x 4</span>
+<span class="co">#&gt; # ... with 4 variables: ID &lt;chr&gt;, PN &lt;chr&gt;, VN &lt;chr&gt;, CL &lt;chr&gt;</span></code></pre></div>
 </div>
 </div>
   </div>
@@ -229,7 +231,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
