@@ -64,3 +64,8 @@ _Sources listed if written by other than Adrian_
       
   * `sam_to_fasta()`
       - Write SAM Query sequences to file as fasta with with QNAME as identifier
+
+**Rectangular**
+
+  * `exposeDupes()`
+      - Find duplicated IDs in a tibble and expose what variables cause them

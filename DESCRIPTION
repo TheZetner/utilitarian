@@ -15,7 +15,8 @@ Imports:
     ggplot2,
     purrr,
     tibble,
-    tidyr
+    tidyr,
+    tidyselect
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,

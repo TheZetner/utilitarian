@@ -3,7 +3,7 @@
 \docType{data}
 \name{samcols}
 \alias{samcols}
-\title{Plain English CIGAR Operation Names}
+\title{Plain English SAM Column Names}
 \format{
 An 11-element character vector:
 \describe{
