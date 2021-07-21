@@ -84,7 +84,7 @@ or a tibble" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -263,24 +263,24 @@ or a tibble</p>
 #&gt; </span><span style='color: #BCBCBC;'>15</span><span> w     12   
 #&gt; </div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span>, listout <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 15 x 7</span><span>
-#&gt;    name  letters.grpNdis~ letters.values month.grpNdisti~ month.values
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                     </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e                    3 F                             4 June        
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e                    3 H                             4 July        
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e                    3 A                             4 May         
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> e                    3 F                             4 April       
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> f                    1 B                             2 April       
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> f                    1 B                             2 June        
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> k                    2 J                             2 February    
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> k                    2 C                             2 January     
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> m                    2 H                             2 May         
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> m                    2 C                             2 June        
-#&gt; </span><span style='color: #BCBCBC;'>11</span><span> o                    3 C                             3 February    
-#&gt; </span><span style='color: #BCBCBC;'>12</span><span> o                    3 A                             3 March       
-#&gt; </span><span style='color: #BCBCBC;'>13</span><span> o                    3 J                             3 September   
-#&gt; </span><span style='color: #BCBCBC;'>14</span><span> w                    2 F                             2 December    
-#&gt; </span><span style='color: #BCBCBC;'>15</span><span> w                    2 G                             2 May         
-#&gt; </span><span style='color: #949494;'># ... with 2 more variables: nums.grpNdistinct </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span style='color: #949494;'>, nums.values </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>  <span class='co'># }</span>
+#&gt;    name  letters.grpNdistinct letters.values month.grpNdistinct month.values
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e                        3 F                               4 June        
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e                        3 H                               4 July        
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e                        3 A                               4 May         
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> e                        3 F                               4 April       
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> f                        1 B                               2 April       
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> f                        1 B                               2 June        
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> k                        2 J                               2 February    
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> k                        2 C                               2 January     
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> m                        2 H                               2 May         
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> m                        2 C                               2 June        
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> o                        3 C                               3 February    
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> o                        3 A                               3 March       
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> o                        3 J                               3 September   
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span> w                        2 F                               2 December    
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span> w                        2 G                               2 May         
+#&gt; </span><span style='color: #949494;'># ... with 2 more variables: nums.grpNdistinct &lt;int&gt;, nums.values &lt;dbl&gt;</span><span></div><div class='input'>  <span class='co'># }</span>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

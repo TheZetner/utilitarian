@@ -14,7 +14,7 @@ _utilitarian_ is a package 'full' of useful R functions that reduce the day to d
 
 ```remotes::install_github("TheZetner/utilitarian")```
 
-### Current functions:
+### Current functions
 
 _Sources listed if written by other than Adrian_
 
@@ -69,3 +69,10 @@ _Sources listed if written by other than Adrian_
 
   * `exposeDupes()`
       - Find duplicated IDs in a tibble and expose what variables cause them
+
+### Current Templates
+
+  * **Reportable Script**
+      - Frontmatter for a script that can easily be modified to knit a report
+      - Includes default headers to hide all but the code and results desired
+      - Uses [Spin](https://bookdown.org/yihui/rmarkdown-cookbook/spin.html)

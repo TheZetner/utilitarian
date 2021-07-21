@@ -1,0 +1,4 @@
+name: Reportable Script
+description: >
+   Frontmatter for a script that can easily be modified to knit a report
+create_dir: FALSE

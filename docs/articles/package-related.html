@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -86,7 +86,7 @@
 
       
 
-      </header><script src="package-related_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
+      </header><script src="package-related_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Package Related Functions</h1>
@@ -108,13 +108,6 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="../reference/usePackage.html">usePackage</a></span><span class="op">(</span><span class="st">"dichromat"</span><span class="op">)</span>
-<span class="co">#&gt; Package dichromat not found, installing...</span>
-<span class="co">#&gt; Installing package into 'C:/Users/azetner/AppData/Local/Temp/RtmpakV3l4/temp_libpath30e01cdb799a'</span>
-<span class="co">#&gt; (as 'lib' is unspecified)</span>
-<span class="co">#&gt; package 'dichromat' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The downloaded binary packages are in</span>
-<span class="co">#&gt;  C:\Users\azetner\AppData\Local\Temp\RtmpcVOUhX\downloaded_packages</span>
 <span class="co">#&gt; Loading Package dichromat...</span>
 <span class="co">#&gt; Loading required package: dichromat</span></code></pre></div>
 <p>Combine <code><a href="../reference/usePackage.html">usePackage()</a></code> with the <code>purrr</code> package to attempt to attach and (install if unavailable) multiple packages. Walk doesn’t return an output, only the secondary effects. In this case, an attached package from each of those in the character vector.</p>
@@ -143,69 +136,13 @@
 <span class="co">#&gt; Loading required package: readr</span>
 <span class="co">#&gt; Loading Package ggplot2...</span>
 <span class="co">#&gt; Loading required package: ggplot2</span>
-<span class="co">#&gt; Package ggridges not found, installing...</span>
-<span class="co">#&gt; Installing package into 'C:/Users/azetner/AppData/Local/Temp/RtmpakV3l4/temp_libpath30e01cdb799a'</span>
-<span class="co">#&gt; (as 'lib' is unspecified)</span>
-<span class="co">#&gt; also installing the dependencies 'fontBitstreamVera', 'fontLiberation', 'fontquiver', 'freetypeharfbuzz', 'gdtools', 'ggplot2movies', 'vdiffr'</span>
-<span class="co">#&gt; package 'fontBitstreamVera' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'fontLiberation' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'fontquiver' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'freetypeharfbuzz' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'gdtools' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'ggplot2movies' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'vdiffr' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'ggridges' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The downloaded binary packages are in</span>
-<span class="co">#&gt;  C:\Users\azetner\AppData\Local\Temp\RtmpcVOUhX\downloaded_packages</span>
 <span class="co">#&gt; Loading Package ggridges...</span>
 <span class="co">#&gt; Loading required package: ggridges</span>
-<span class="co">#&gt; Package viridis not found, installing...</span>
-<span class="co">#&gt; Installing package into 'C:/Users/azetner/AppData/Local/Temp/RtmpakV3l4/temp_libpath30e01cdb799a'</span>
-<span class="co">#&gt; (as 'lib' is unspecified)</span>
-<span class="co">#&gt; also installing the dependencies 'png', 'jpeg', 'raster', 'latticeExtra', 'zoo', 'maps', 'hexbin', 'rasterVis', 'mapproj', 'svglite', 'rgdal'</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;   There is a binary version available but the source version is later:</span>
-<span class="co">#&gt;          binary source needs_compilation</span>
-<span class="co">#&gt; svglite 1.2.3.2  2.0.0              TRUE</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;   Binaries will be installed</span>
-<span class="co">#&gt; package 'png' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'jpeg' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'raster' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'latticeExtra' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'zoo' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'maps' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'hexbin' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'rasterVis' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'mapproj' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'svglite' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'rgdal' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'viridis' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The downloaded binary packages are in</span>
-<span class="co">#&gt;  C:\Users\azetner\AppData\Local\Temp\RtmpcVOUhX\downloaded_packages</span>
 <span class="co">#&gt; Loading Package viridis...</span>
 <span class="co">#&gt; Loading required package: viridis</span>
 <span class="co">#&gt; Loading required package: viridisLite</span>
-<span class="co">#&gt; Package hrbrthemes not found, installing...</span>
-<span class="co">#&gt; Installing package into 'C:/Users/azetner/AppData/Local/Temp/RtmpakV3l4/temp_libpath30e01cdb799a'</span>
-<span class="co">#&gt; (as 'lib' is unspecified)</span>
-<span class="co">#&gt; also installing the dependencies 'extrafontdb', 'Rttf2pt1', 'extrafont', 'hunspell', 'gcookbook'</span>
-<span class="co">#&gt; package 'extrafontdb' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'Rttf2pt1' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'extrafont' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'hunspell' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'gcookbook' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; package 'hrbrthemes' successfully unpacked and MD5 sums checked</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The downloaded binary packages are in</span>
-<span class="co">#&gt;  C:\Users\azetner\AppData\Local\Temp\RtmpcVOUhX\downloaded_packages</span>
 <span class="co">#&gt; Loading Package hrbrthemes...</span>
 <span class="co">#&gt; Loading required package: hrbrthemes</span>
-<span class="co">#&gt; NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.</span>
-<span class="co">#&gt;       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and</span>
-<span class="co">#&gt;       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow</span>
 <span class="co">#&gt; Loading Package forcats...</span>
 <span class="co">#&gt; Loading required package: forcats</span>
 <span class="co">#&gt; Loading Package tidyr...</span>
@@ -225,7 +162,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/libraries.html">libraries</a></span><span class="op">(</span><span class="va">dichromat</span>, <span class="va">jsonlite</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; R version 4.0.3 (2020-10-10)</span>
+<span class="co">#&gt; R version 4.0.5 (2021-03-31)</span>
 <span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
 <span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
 <span class="co">#&gt; </span>
@@ -240,25 +177,27 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.2       forcats_0.5.1     hrbrthemes_0.8.0 </span>
-<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
-<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.9.2 dplyr_1.0.3       DT_0.17          </span>
+<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.3       forcats_0.5.1     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.6.0     viridisLite_0.4.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
+<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.10  dplyr_1.0.5       DT_0.18          </span>
 <span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;  [1] tidyselect_1.1.0  xfun_0.20         purrr_0.3.4       colorspace_2.0-0 </span>
-<span class="co">#&gt;  [5] vctrs_0.3.6       generics_0.1.0    htmltools_0.5.1.1 yaml_2.2.1       </span>
-<span class="co">#&gt;  [9] rlang_0.4.10      pkgdown_1.6.1     pillar_1.4.7      glue_1.4.2       </span>
-<span class="co">#&gt; [13] withr_2.4.1       DBI_1.1.1         gdtools_0.2.3     lifecycle_1.0.0  </span>
-<span class="co">#&gt; [17] plyr_1.8.6        stringr_1.4.0     munsell_0.5.0     gtable_0.3.0     </span>
-<span class="co">#&gt; [21] ragg_1.1.0        htmlwidgets_1.5.3 memoise_2.0.0     evaluate_0.14    </span>
-<span class="co">#&gt; [25] knitr_1.31        fastmap_1.1.0     extrafont_0.17    Rttf2pt1_1.3.8   </span>
-<span class="co">#&gt; [29] Rcpp_1.0.6        scales_1.1.1      cachem_1.0.3      desc_1.2.0       </span>
-<span class="co">#&gt; [33] systemfonts_1.0.1 fs_1.5.0          textshaping_0.3.0 gridExtra_2.3    </span>
-<span class="co">#&gt; [37] hms_1.0.0         digest_0.6.27     stringi_1.5.3     grid_4.0.3       </span>
-<span class="co">#&gt; [41] rprojroot_2.0.2   tools_4.0.3       magrittr_2.0.1    tibble_3.0.6     </span>
-<span class="co">#&gt; [45] crayon_1.4.1      extrafontdb_1.0   pkgconfig_2.0.3   ellipsis_0.3.1   </span>
-<span class="co">#&gt; [49] assertthat_0.2.1  rmarkdown_2.6     R6_2.5.0          compiler_4.0.3</span></code></pre></div>
+<span class="co">#&gt;  [1] Rcpp_1.0.6        assertthat_0.2.1  rprojroot_2.0.2   digest_0.6.27    </span>
+<span class="co">#&gt;  [5] utf8_1.2.1        R6_2.5.0          plyr_1.8.6        evaluate_0.14    </span>
+<span class="co">#&gt;  [9] pillar_1.6.0      gdtools_0.2.3     rlang_0.4.11      extrafontdb_1.0  </span>
+<span class="co">#&gt; [13] jquerylib_0.1.4   rmarkdown_2.8     pkgdown_1.6.1     textshaping_0.3.3</span>
+<span class="co">#&gt; [17] desc_1.3.0        extrafont_0.17    stringr_1.4.0     htmlwidgets_1.5.3</span>
+<span class="co">#&gt; [21] munsell_0.5.0     compiler_4.0.5    xfun_0.22         pkgconfig_2.0.3  </span>
+<span class="co">#&gt; [25] systemfonts_1.0.1 htmltools_0.5.1.1 tidyselect_1.1.1  tibble_3.1.1     </span>
+<span class="co">#&gt; [29] gridExtra_2.3     fansi_0.4.2       crayon_1.4.1      withr_2.4.2      </span>
+<span class="co">#&gt; [33] grid_4.0.5        Rttf2pt1_1.3.8    gtable_0.3.0      lifecycle_1.0.0  </span>
+<span class="co">#&gt; [37] DBI_1.1.1         magrittr_2.0.1    scales_1.1.1      stringi_1.5.3    </span>
+<span class="co">#&gt; [41] cachem_1.0.4      fs_1.5.0          bslib_0.2.4       ellipsis_0.3.2   </span>
+<span class="co">#&gt; [45] ragg_1.1.2        generics_0.1.0    vctrs_0.3.8       tools_4.0.5      </span>
+<span class="co">#&gt; [49] glue_1.4.2        purrr_0.3.4       hms_1.0.0         fastmap_1.1.0    </span>
+<span class="co">#&gt; [53] yaml_2.2.1        colorspace_2.0-1  memoise_2.0.0     knitr_1.33       </span>
+<span class="co">#&gt; [57] sass_0.3.1</span></code></pre></div>
 </div>
 <div id="quoted" class="section level4">
 <h4 class="hasAnchor">
@@ -267,7 +206,7 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/libraries.html">libraries</a></span><span class="op">(</span><span class="st">"dichromat"</span>, <span class="st">"jsonlite"</span>, quoted <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; R version 4.0.3 (2020-10-10)</span>
+<span class="co">#&gt; R version 4.0.5 (2021-03-31)</span>
 <span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
 <span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
 <span class="co">#&gt; </span>
@@ -282,25 +221,27 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.2       forcats_0.5.1     hrbrthemes_0.8.0 </span>
-<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
-<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.9.2 dplyr_1.0.3       DT_0.17          </span>
+<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.3       forcats_0.5.1     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.6.0     viridisLite_0.4.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
+<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.10  dplyr_1.0.5       DT_0.18          </span>
 <span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;  [1] tidyselect_1.1.0  xfun_0.20         purrr_0.3.4       colorspace_2.0-0 </span>
-<span class="co">#&gt;  [5] vctrs_0.3.6       generics_0.1.0    htmltools_0.5.1.1 yaml_2.2.1       </span>
-<span class="co">#&gt;  [9] rlang_0.4.10      pkgdown_1.6.1     pillar_1.4.7      glue_1.4.2       </span>
-<span class="co">#&gt; [13] withr_2.4.1       DBI_1.1.1         gdtools_0.2.3     lifecycle_1.0.0  </span>
-<span class="co">#&gt; [17] plyr_1.8.6        stringr_1.4.0     munsell_0.5.0     gtable_0.3.0     </span>
-<span class="co">#&gt; [21] ragg_1.1.0        htmlwidgets_1.5.3 memoise_2.0.0     evaluate_0.14    </span>
-<span class="co">#&gt; [25] knitr_1.31        fastmap_1.1.0     extrafont_0.17    Rttf2pt1_1.3.8   </span>
-<span class="co">#&gt; [29] Rcpp_1.0.6        scales_1.1.1      cachem_1.0.3      desc_1.2.0       </span>
-<span class="co">#&gt; [33] systemfonts_1.0.1 fs_1.5.0          textshaping_0.3.0 gridExtra_2.3    </span>
-<span class="co">#&gt; [37] hms_1.0.0         digest_0.6.27     stringi_1.5.3     grid_4.0.3       </span>
-<span class="co">#&gt; [41] rprojroot_2.0.2   tools_4.0.3       magrittr_2.0.1    tibble_3.0.6     </span>
-<span class="co">#&gt; [45] crayon_1.4.1      extrafontdb_1.0   pkgconfig_2.0.3   ellipsis_0.3.1   </span>
-<span class="co">#&gt; [49] assertthat_0.2.1  rmarkdown_2.6     R6_2.5.0          compiler_4.0.3</span></code></pre></div>
+<span class="co">#&gt;  [1] Rcpp_1.0.6        assertthat_0.2.1  rprojroot_2.0.2   digest_0.6.27    </span>
+<span class="co">#&gt;  [5] utf8_1.2.1        R6_2.5.0          plyr_1.8.6        evaluate_0.14    </span>
+<span class="co">#&gt;  [9] pillar_1.6.0      gdtools_0.2.3     rlang_0.4.11      extrafontdb_1.0  </span>
+<span class="co">#&gt; [13] jquerylib_0.1.4   rmarkdown_2.8     pkgdown_1.6.1     textshaping_0.3.3</span>
+<span class="co">#&gt; [17] desc_1.3.0        extrafont_0.17    stringr_1.4.0     htmlwidgets_1.5.3</span>
+<span class="co">#&gt; [21] munsell_0.5.0     compiler_4.0.5    xfun_0.22         pkgconfig_2.0.3  </span>
+<span class="co">#&gt; [25] systemfonts_1.0.1 htmltools_0.5.1.1 tidyselect_1.1.1  tibble_3.1.1     </span>
+<span class="co">#&gt; [29] gridExtra_2.3     fansi_0.4.2       crayon_1.4.1      withr_2.4.2      </span>
+<span class="co">#&gt; [33] grid_4.0.5        Rttf2pt1_1.3.8    gtable_0.3.0      lifecycle_1.0.0  </span>
+<span class="co">#&gt; [37] DBI_1.1.1         magrittr_2.0.1    scales_1.1.1      stringi_1.5.3    </span>
+<span class="co">#&gt; [41] cachem_1.0.4      fs_1.5.0          bslib_0.2.4       ellipsis_0.3.2   </span>
+<span class="co">#&gt; [45] ragg_1.1.2        generics_0.1.0    vctrs_0.3.8       tools_4.0.5      </span>
+<span class="co">#&gt; [49] glue_1.4.2        purrr_0.3.4       hms_1.0.0         fastmap_1.1.0    </span>
+<span class="co">#&gt; [53] yaml_2.2.1        colorspace_2.0-1  memoise_2.0.0     knitr_1.33       </span>
+<span class="co">#&gt; [57] sass_0.3.1</span></code></pre></div>
 </div>
 <div id="quoted-in-a-character-vector" class="section level4">
 <h4 class="hasAnchor">
@@ -310,7 +251,7 @@
 <code class="sourceCode R"><span class="va">mypkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dichromat"</span>, <span class="st">"jsonlite"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/libraries.html">libraries</a></span><span class="op">(</span><span class="va">mypkgs</span>, quoted <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; R version 4.0.3 (2020-10-10)</span>
+<span class="co">#&gt; R version 4.0.5 (2021-03-31)</span>
 <span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
 <span class="co">#&gt; Running under: Windows 10 x64 (build 18363)</span>
 <span class="co">#&gt; </span>
@@ -325,25 +266,27 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.2       forcats_0.5.1     hrbrthemes_0.8.0 </span>
-<span class="co">#&gt;  [5] viridis_0.5.1     viridisLite_0.3.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
-<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.9.2 dplyr_1.0.3       DT_0.17          </span>
+<span class="co">#&gt;  [1] jsonlite_1.7.2    tidyr_1.1.3       forcats_0.5.1     hrbrthemes_0.8.0 </span>
+<span class="co">#&gt;  [5] viridis_0.6.0     viridisLite_0.4.0 ggridges_0.5.3    ggplot2_3.3.3    </span>
+<span class="co">#&gt;  [9] readr_1.4.0       lubridate_1.7.10  dplyr_1.0.5       DT_0.18          </span>
 <span class="co">#&gt; [13] dichromat_2.0-0   utilitarian_0.1.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;  [1] tidyselect_1.1.0  xfun_0.20         purrr_0.3.4       colorspace_2.0-0 </span>
-<span class="co">#&gt;  [5] vctrs_0.3.6       generics_0.1.0    htmltools_0.5.1.1 yaml_2.2.1       </span>
-<span class="co">#&gt;  [9] rlang_0.4.10      pkgdown_1.6.1     pillar_1.4.7      glue_1.4.2       </span>
-<span class="co">#&gt; [13] withr_2.4.1       DBI_1.1.1         gdtools_0.2.3     lifecycle_1.0.0  </span>
-<span class="co">#&gt; [17] plyr_1.8.6        stringr_1.4.0     munsell_0.5.0     gtable_0.3.0     </span>
-<span class="co">#&gt; [21] ragg_1.1.0        htmlwidgets_1.5.3 memoise_2.0.0     evaluate_0.14    </span>
-<span class="co">#&gt; [25] knitr_1.31        fastmap_1.1.0     extrafont_0.17    Rttf2pt1_1.3.8   </span>
-<span class="co">#&gt; [29] Rcpp_1.0.6        scales_1.1.1      cachem_1.0.3      desc_1.2.0       </span>
-<span class="co">#&gt; [33] systemfonts_1.0.1 fs_1.5.0          textshaping_0.3.0 gridExtra_2.3    </span>
-<span class="co">#&gt; [37] hms_1.0.0         digest_0.6.27     stringi_1.5.3     grid_4.0.3       </span>
-<span class="co">#&gt; [41] rprojroot_2.0.2   tools_4.0.3       magrittr_2.0.1    tibble_3.0.6     </span>
-<span class="co">#&gt; [45] crayon_1.4.1      extrafontdb_1.0   pkgconfig_2.0.3   ellipsis_0.3.1   </span>
-<span class="co">#&gt; [49] assertthat_0.2.1  rmarkdown_2.6     R6_2.5.0          compiler_4.0.3</span></code></pre></div>
+<span class="co">#&gt;  [1] Rcpp_1.0.6        assertthat_0.2.1  rprojroot_2.0.2   digest_0.6.27    </span>
+<span class="co">#&gt;  [5] utf8_1.2.1        R6_2.5.0          plyr_1.8.6        evaluate_0.14    </span>
+<span class="co">#&gt;  [9] pillar_1.6.0      gdtools_0.2.3     rlang_0.4.11      extrafontdb_1.0  </span>
+<span class="co">#&gt; [13] jquerylib_0.1.4   rmarkdown_2.8     pkgdown_1.6.1     textshaping_0.3.3</span>
+<span class="co">#&gt; [17] desc_1.3.0        extrafont_0.17    stringr_1.4.0     htmlwidgets_1.5.3</span>
+<span class="co">#&gt; [21] munsell_0.5.0     compiler_4.0.5    xfun_0.22         pkgconfig_2.0.3  </span>
+<span class="co">#&gt; [25] systemfonts_1.0.1 htmltools_0.5.1.1 tidyselect_1.1.1  tibble_3.1.1     </span>
+<span class="co">#&gt; [29] gridExtra_2.3     fansi_0.4.2       crayon_1.4.1      withr_2.4.2      </span>
+<span class="co">#&gt; [33] grid_4.0.5        Rttf2pt1_1.3.8    gtable_0.3.0      lifecycle_1.0.0  </span>
+<span class="co">#&gt; [37] DBI_1.1.1         magrittr_2.0.1    scales_1.1.1      stringi_1.5.3    </span>
+<span class="co">#&gt; [41] cachem_1.0.4      fs_1.5.0          bslib_0.2.4       ellipsis_0.3.2   </span>
+<span class="co">#&gt; [45] ragg_1.1.2        generics_0.1.0    vctrs_0.3.8       tools_4.0.5      </span>
+<span class="co">#&gt; [49] glue_1.4.2        purrr_0.3.4       hms_1.0.0         fastmap_1.1.0    </span>
+<span class="co">#&gt; [53] yaml_2.2.1        colorspace_2.0-1  memoise_2.0.0     knitr_1.33       </span>
+<span class="co">#&gt; [57] sass_0.3.1</span></code></pre></div>
 </div>
 <div id="unquote-or-quoted-but-with-verbose-feedback" class="section level4">
 <h4 class="hasAnchor">

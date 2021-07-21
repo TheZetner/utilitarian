@@ -1,7 +1,8 @@
 Package: utilitarian
 Type: Package
 Title: Utilitarian: A Selection of Useful R Functions
-Version: 0.1.2
+Version: 0.1.3
+Date: 2021-07-20
 Author: Adrian Zetner
 Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
 Description: Functions and Addins to make youR life better
@@ -16,10 +17,10 @@ Imports:
     purrr,
     tibble,
     tidyr,
-    tidyselect
+    tidyselect,
+    knitr
 RoxygenNote: 7.1.1
 Suggests: 
-    knitr,
     rmarkdown
 Depends: 
     R (>= 2.10)

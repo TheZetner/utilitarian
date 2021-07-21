@@ -1,0 +1,29 @@
+#' ---
+#' title:
+#' author: ""
+#' date: "`r Sys.Date()`"
+#' ---
+
+# Change the file extension to .R
+
+# Define defaults for interpreted code blocks
+#+ echo=FALSE
+knitr::opts_chunk$set(fig.width = 12,
+                      fig.height = 8,
+                      echo = FALSE,
+                      include = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.path = "figs/")
+
+# Libraries and Imports ####
+
+suppressPackageStartupMessages({
+  library(here)
+})
+
+# Put this over any code you want shown
+#+ include=TRUE
+
+# Use this to split your report across mutiple pages
+#' \newpage

@@ -42,12 +42,12 @@ https://dplyr.tidyverse.org/articles/programming.html
 \examples{
 \donttest{
   library(tidyselect)
-  df <- data.frame(name = sample(letters, 20, replace = T),
-               month = sample(month.name, 20, replace = T),
-            letters = sample(LETTERS[1:10], 20, replace = T),
+  df <- data.frame(name = sample(letters, 20, replace = TRUE),
+               month = sample(month.name, 20, replace = TRUE),
+            letters = sample(LETTERS[1:10], 20, replace = TRUE),
             nums = floor(runif(20, 1, 15)))
   dplyr::count(df, name)
   exposeDupes(df, name)
-  exposeDupes(df, name, listout = F)
+  exposeDupes(df, name, listout = FALSE)
   }
 }
