@@ -45,7 +45,7 @@ exposeDupes <- function(x, grouping_var, listout = TRUE){
   df <- x %>%
     group_by({{ grouping_var }}) %>%
     summarise(across(.fns = n_distinct)) %>% # Count distinct per group
-    select({{ grouping_var }}, where( ~ is.numeric(.x) && max(.x) > 1)) # Select cols where not distinct
+    select({{ grouping_var }}, tidyselect::where( ~ is.numeric(.x) && max(.x) > 1)) # Select cols where not distinct
 
 
   if(ncol(df) == 1){
@@ -79,3 +79,24 @@ exposeDupes <- function(x, grouping_var, listout = TRUE){
     df
   }
 }
+
+#' Clip Excel: Copy Tibble to Clipboard in Excel Compatible Format
+#'
+#' The clipExcel function takes in a tibble / dataframe and arguments for row
+#' and column names. Its only return value is that tibble copied to the
+#' clipboard in a format that can be easily pasted to Excel
+#' Taken from \url{https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet}
+#' @param x A tibble.
+#' @param row.names Logical, include row names?
+#' @param col.names Logical, include column names?
+#' @param ... Any further arguments to write.table
+#' @keywords tibble
+#' @import utils
+#' @export
+#' @examples
+#' \donttest{ clipExcel(iris) }
+
+clipExcel <- function(x,row.names=FALSE,col.names=TRUE,...) {
+  write.table(x,"clipboard",sep="\t",row.names=row.names,col.names=col.names,...)
+}
+

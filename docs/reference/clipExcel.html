@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Expose Duplicates — exposeDupes • utilitarian</title>
+<title>Clip Excel: Copy Tibble to Clipboard in Excel Compatible Format — clipExcel • utilitarian</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,12 +46,11 @@
 
 
 
-<meta property="og:title" content="Expose Duplicates — exposeDupes" />
-<meta property="og:description" content="Sometimes datasets are expected to be tidy but aren't, finding distinct
-rows of duplicated IDs is easy but finding why they're distinct in many
-column tables is less straight forward. This functions returns the values
-that resulted in any duplicated IDs in one of two forms either a named list
-or a tibble" />
+<meta property="og:title" content="Clip Excel: Copy Tibble to Clipboard in Excel Compatible Format — clipExcel" />
+<meta property="og:description" content="The clipExcel function takes in a tibble / dataframe and arguments for row
+and column names. Its only return value is that tibble copied to the
+clipboard in a format that can be easily pasted to Excel
+Taken from https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -135,78 +134,44 @@ or a tibble" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Expose Duplicates</h1>
+    <h1>Clip Excel: Copy Tibble to Clipboard in Excel Compatible Format</h1>
     <small class="dont-index">Source: <a href='https://github.com/TheZetner/utilitarian/blob/master/R/rectangular.R'><code>R/rectangular.R</code></a></small>
-    <div class="hidden name"><code>exposeDupes.Rd</code></div>
+    <div class="hidden name"><code>clipExcel.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Sometimes datasets are expected to be tidy but aren't, finding distinct
-rows of duplicated IDs is easy but finding why they're distinct in many
-column tables is less straight forward. This functions returns the values
-that resulted in any duplicated IDs in one of two forms either a named list
-or a tibble</p>
+    <p>The clipExcel function takes in a tibble / dataframe and arguments for row
+and column names. Its only return value is that tibble copied to the
+clipboard in a format that can be easily pasted to Excel
+Taken from <a href='https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet'>https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>grouping_var</span>, listout <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>clipExcel</span><span class='op'>(</span><span class='va'>x</span>, row.names <span class='op'>=</span> <span class='cn'>FALSE</span>, col.names <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Tibble or Dataframe</p></td>
+      <td><p>A tibble.</p></td>
     </tr>
     <tr>
-      <th>grouping_var</th>
-      <td><p>Column to look for duplicated values</p></td>
+      <th>row.names</th>
+      <td><p>Logical, include row names?</p></td>
     </tr>
     <tr>
-      <th>listout</th>
-      <td><p>Flag to return either list or tibble</p></td>
+      <th>col.names</th>
+      <td><p>Logical, include column names?</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Any further arguments to write.table</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>List or Dataframe of results</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Named list of two-column tibbles for each value resulting in duplicate IDs</p><ul>
-<li><p>Grouping Variable</p></li>
-<li><p>Distinct values</p></li>
-</ul>
-
-<p>Tibble with the following columns</p><ul>
-<li><p>Grouping Variable</p></li>
-<li><p>n * X.grpNdistinct number of distinct values for duplicated ID</p></li>
-<li><p>n * X.values values for that duplicated ID</p></li>
-</ul>
-
-<p>https://dplyr.tidyverse.org/articles/programming.html</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyselect.r-lib.org'>tidyselect</a></span><span class='op'>)</span>
-  <span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>letters</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
-               month <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>month.name</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
-            letters <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>LETTERS</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
-            nums <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>20</span>, <span class='fl'>1</span>, <span class='fl'>15</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    name n
-#&gt; 1     b 1
-#&gt; 2     d 1
-#&gt; 3     e 4
-#&gt; 4     f 2
-#&gt; 5     i 1
-#&gt; 6     k 2
-#&gt; 7     l 1
-#&gt; 8     m 2
-#&gt; 9     o 3
-#&gt; 10    w 2
-#&gt; 11    x 1</div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error: 'where' is not an exported object from 'namespace:tidyselect'</span></div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span>, listout <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error: 'where' is not an exported object from 'namespace:tidyselect'</span></div><div class='input'>  <span class='co'># }</span>
+    <pre class="examples"><div class='input'> <span class='fu'>clipExcel</span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span> 
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

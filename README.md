@@ -28,9 +28,11 @@ _Sources listed if written by other than Adrian_
 **Addins**
 
   * `insertViewAddin()`  
-      - To quickly cut a pipeline short and view the tibble at that step. Find in the Addin menu or bind it to something convenient.
+      - To quickly cut a pipeline short and view the tibble at that step. Find in the Addin menu or bind it to something convenient (eg. ctrl+alt+m).
   * `insertGlimpseAddin()`  
-      - To quickly cut a pipeline short and glimpse the tibble at that step. Find in the Addin menu or bind it to something convenient.
+      - To quickly cut a pipeline short and glimpse the tibble at that step. Find in the Addin menu or bind it to something convenient (eg. ctrl+alt+g)
+  * `insertClipExcelAddin()`
+      - To quickly clip a tibble in Excel compatible format. Find in the Addin menu or bind it to something convenient (eg. ctrl+alt+c)
 
 **Maths**
 
@@ -69,6 +71,8 @@ _Sources listed if written by other than Adrian_
 
   * `exposeDupes()`
       - Find duplicated IDs in a tibble and expose what variables cause them
+  * `clipExcel()`
+      - Copy a dataframe or tibble to clipboard
 
 ### Current Templates
 

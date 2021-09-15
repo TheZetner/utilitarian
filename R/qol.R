@@ -4,10 +4,10 @@
 #'
 #' @param x Vector of values
 #' @param y Another vector of values
-#' @return Vector of values that are in X but not in Y
+#' @return Vector of logical values inverting X %in% Y
 #' @examples
 #' \donttest{
-#'  x %notin% y
+#'  names(iris) %notin% "Species"
 #'  }
 #' @export
 `%notin%` <- function(x,y) {!(x %in% y)}

@@ -12,13 +12,13 @@ x \%notin\% y
 \item{y}{Another vector of values}
 }
 \value{
-Vector of values that are in X but not in Y
+Vector of logical values inverting X %in% Y
 }
 \description{
 Opposite of %in%
 }
 \examples{
 \donttest{
- x \%notin\% y
+ names(iris) \%notin\% "Species"
  }
 }

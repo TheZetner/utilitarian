@@ -18,3 +18,13 @@ insertViewAddin <- function() {
 insertGlimpseAddin <- function() {
   rstudioapi::insertText(" %>% glimpse()")
 }
+
+#' Insert \%>\% clipExcel() at cursor position
+#'
+#' Call this function as an addin to insert \code{ \%>\% clipExcel()} at the cursor position.
+#' Useful for quickly checking pipeline status. Bind to ctrl+shift+V
+#'
+#' @export
+insertClipExcelAddin <- function() {
+  rstudioapi::insertText(" %>% clipExcel()")
+}
