@@ -4,7 +4,7 @@
 \alias{clipExcel}
 \title{Clip Excel: Copy Tibble to Clipboard in Excel Compatible Format}
 \usage{
-clipExcel(x, row.names = FALSE, col.names = TRUE, ...)
+clipExcel(x, row.names = FALSE, col.names = TRUE, na = "", ...)
 }
 \arguments{
 \item{x}{A tibble.}
@@ -12,6 +12,8 @@ clipExcel(x, row.names = FALSE, col.names = TRUE, ...)
 \item{row.names}{Logical, include row names?}
 
 \item{col.names}{Logical, include column names?}
+
+\item{na}{What to do with NA values? Default to blank}
 
 \item{...}{Any further arguments to write.table}
 }

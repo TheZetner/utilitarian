@@ -83,7 +83,7 @@ Taken from https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -146,7 +146,7 @@ clipboard in a format that can be easily pasted to Excel
 Taken from <a href='https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet'>https://stackoverflow.com/questions/24704344/copy-an-r-data-frame-to-an-excel-spreadsheet</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>clipExcel</span><span class='op'>(</span><span class='va'>x</span>, row.names <span class='op'>=</span> <span class='cn'>FALSE</span>, col.names <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>clipExcel</span><span class='op'>(</span><span class='va'>x</span>, row.names <span class='op'>=</span> <span class='cn'>FALSE</span>, col.names <span class='op'>=</span> <span class='cn'>TRUE</span>, na <span class='op'>=</span> <span class='st'>""</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,6 +162,10 @@ Taken from <a href='https://stackoverflow.com/questions/24704344/copy-an-r-data-
     <tr>
       <th>col.names</th>
       <td><p>Logical, include column names?</p></td>
+    </tr>
+    <tr>
+      <th>na</th>
+      <td><p>What to do with NA values? Default to blank</p></td>
     </tr>
     <tr>
       <th>...</th>

@@ -89,6 +89,7 @@ exposeDupes <- function(x, grouping_var, listout = TRUE){
 #' @param x A tibble.
 #' @param row.names Logical, include row names?
 #' @param col.names Logical, include column names?
+#' @param na What to do with NA values? Default to blank
 #' @param ... Any further arguments to write.table
 #' @keywords tibble
 #' @import utils
@@ -96,7 +97,7 @@ exposeDupes <- function(x, grouping_var, listout = TRUE){
 #' @examples
 #' \donttest{ clipExcel(iris) }
 
-clipExcel <- function(x,row.names=FALSE,col.names=TRUE,...) {
-  write.table(x,"clipboard",sep="\t",row.names=row.names,col.names=col.names,...)
+clipExcel <- function(x,row.names=FALSE,col.names=TRUE, na = "", ...) {
+  write.table(x,"clipboard",sep="\t",row.names=row.names,col.names=col.names,na=na,...)
 }
 
