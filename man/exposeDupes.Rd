@@ -41,7 +41,6 @@ https://dplyr.tidyverse.org/articles/programming.html
 }
 \examples{
 \donttest{
-  library(tidyselect)
   df <- data.frame(name = sample(letters, 20, replace = TRUE),
                month = sample(month.name, 20, replace = TRUE),
             letters = sample(LETTERS[1:10], 20, replace = TRUE),

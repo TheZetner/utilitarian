@@ -28,7 +28,6 @@
 #' @import tidyselect dplyr
 #' @examples
 #' \donttest{
-#'   library(tidyselect)
 #'   df <- data.frame(name = sample(letters, 20, replace = TRUE),
 #'                month = sample(month.name, 20, replace = TRUE),
 #'             letters = sample(LETTERS[1:10], 20, replace = TRUE),
@@ -45,7 +44,7 @@ exposeDupes <- function(x, grouping_var, listout = TRUE){
   df <- x %>%
     group_by({{ grouping_var }}) %>%
     summarise(across(.fns = n_distinct)) %>% # Count distinct per group
-    select({{ grouping_var }}, tidyselect::where( ~ is.numeric(.x) && max(.x) > 1)) # Select cols where not distinct
+    select({{ grouping_var }}, tidyselect::vars_select_helpers$where( ~ is.numeric(.x) && max(.x) > 1)) # Select cols where not distinct
 
 
   if(ncol(df) == 1){

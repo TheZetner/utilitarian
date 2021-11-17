@@ -1,8 +1,8 @@
 Package: utilitarian
 Type: Package
 Title: Utilitarian: A Selection of Useful R Functions
-Version: 0.1.4
-Date: 2021-07-20
+Version: 0.1.5.1
+Date: 2021-11-17
 Author: Adrian Zetner
 Maintainer: Adrian Zetner <adrian.zetner@gmail.com>
 Description: Functions and Addins to make youR life better.

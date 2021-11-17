@@ -84,7 +84,7 @@ or a tibble" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.1</span>
       </span>
     </div>
 
@@ -187,7 +187,6 @@ or a tibble</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyselect.r-lib.org'>tidyselect</a></span><span class='op'>)</span>
   <span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>letters</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
                month <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>month.name</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
             letters <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>LETTERS</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
@@ -205,9 +204,83 @@ or a tibble</p>
 #&gt; 9     o 3
 #&gt; 10    w 2
 #&gt; 11    x 1</div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error: 'where' is not an exported object from 'namespace:tidyselect'</span></div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span>, listout <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error: 'where' is not an exported object from 'namespace:tidyselect'</span></div><div class='input'>  <span class='co'># }</span>
-</div></pre>
+</div><div class='output co'>#&gt; $letters
+#&gt; <span style='color: #949494;'># A tibble: 12 x 2</span><span>
+#&gt;    name  letters
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e     F      
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e     H      
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e     A      
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> k     J      
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> k     C      
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> m     H      
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> m     C      
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> o     C      
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> o     A      
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> o     J      
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> w     F      
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> w     G      
+#&gt; 
+#&gt; $month
+#&gt; </span><span style='color: #949494;'># A tibble: 15 x 2</span><span>
+#&gt;    name  month    
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e     June     
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e     July     
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e     May      
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> e     April    
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> f     April    
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> f     June     
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> k     February 
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> k     January  
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> m     May      
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> m     June     
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> o     February 
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> o     March    
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> o     September
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span> w     December 
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span> w     May      
+#&gt; 
+#&gt; $nums
+#&gt; </span><span style='color: #949494;'># A tibble: 15 x 2</span><span>
+#&gt;    name  nums 
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e     7    
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e     3    
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e     8    
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> e     12   
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> f     13   
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> f     1    
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> k     1    
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> k     7    
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> m     9    
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> m     4    
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> o     6    
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> o     3    
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> o     11   
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span> w     4    
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span> w     12   
+#&gt; </div><div class='input'>  <span class='fu'>exposeDupes</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>name</span>, listout <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 15 x 7</span><span>
+#&gt;    name  letters.grpNdistinct letters.values month.grpNdistinct month.values
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> e                        3 F                               4 June        
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> e                        3 H                               4 July        
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> e                        3 A                               4 May         
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> e                        3 F                               4 April       
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> f                        1 B                               2 April       
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> f                        1 B                               2 June        
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> k                        2 J                               2 February    
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> k                        2 C                               2 January     
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> m                        2 H                               2 May         
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> m                        2 C                               2 June        
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> o                        3 C                               3 February    
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> o                        3 A                               3 March       
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> o                        3 J                               3 September   
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span> w                        2 F                               2 December    
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span> w                        2 G                               2 May         
+#&gt; </span><span style='color: #949494;'># ... with 2 more variables: nums.grpNdistinct &lt;int&gt;, nums.values &lt;dbl&gt;</span><span></div><div class='input'>  <span class='co'># }</span>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
