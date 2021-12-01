@@ -43,6 +43,12 @@ _Sources listed if written by other than Adrian_
 
   * `%notin%`
       - Not In. Find out what's in one vector and... not in another.
+
+  * `interleave`
+      - Take two vectors and interleave them. Added for the next function
+
+  * `gg_color_hue`
+      - Produce an interleaved colour palette of low and high luminance values
       
 **Sciences**
 
