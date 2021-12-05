@@ -30,13 +30,18 @@ interleave <-function (v1, v2) {
 
 #' gg_color_hue
 #'
-#' Create an interleaved high-low-luminance pal
+#' Create a ggplot palette and optionally interleave high-low-luminance
 #' @param n Number of colours in palette
+#' @param interleave Interleave or not
 #' @examples gg_color_hue(n = 10 )
 #' @export
 
-gg_color_hue <-function (n) {
+gg_color_hue <-function (n, interleave = TRUE) {
   hues = seq(600, 0, length = n)
-  interleave(hcl(h = hues, l = 70, c = 70, fixup = T)[1:floor(n/2)], hcl(h = hues, l = 50, c = 70,
-                                                                         fixup = T)[1:ceiling(n/2)])
+  if(interleave){
+  interleave(hcl(h = hues, l = 70, c = 70, fixup = T)[1:floor(n/2)],
+             hcl(h = hues, l = 50, c = 70, fixup = T)[1:ceiling(n/2)])
+    }else {
+      hcl(h = hues, l = 70, c = 70, fixup = T)[1:n]
+      }
 }

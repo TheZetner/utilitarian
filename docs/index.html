@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -81,9 +77,8 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="utilitarian-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#utilitarian-" class="anchor"></a>utilitarian <img src="reference/figures/logo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="utilitarian-">utilitarian <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#utilitarian-"></a>
 </h1></div>
 <p><img src="reference/figures/trolley.png" title="Trolley https://qph.fs.quoracdn.net/main-qimg-3b9c36fceab7d0170fb30e912f145287"></p>
 <blockquote>
@@ -95,21 +90,21 @@ An action is right if it leads to the most happiness for the greatest number of 
 A function is worthwhile if it leads to the most usefulness for the greatest number of users.</p>
 </blockquote>
 <p><em>utilitarian</em> is a package ‘full’ of useful R functions that reduce the day to day pain of using R as experienced by its author. Most of these functions are the result of searching for and not finding exactly what was needed and doing it myself. In the words of a certain pipe-bending robot: “Yeah, well, I’m gonna go build my own <em>R package</em>! With blackjack! And hookers! In fact, forget the <em>R package</em>!”</p>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
-<p><code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("TheZetner/utilitarian")</a></code></p>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
+<p><code>remotes::install_github("TheZetner/utilitarian")</code></p>
 </div>
-<div id="current-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#current-functions" class="anchor"></a>Current functions</h3>
+<div class="section level3">
+<h3 id="current-functions">Current functions<a class="anchor" aria-label="anchor" href="#current-functions"></a>
+</h3>
 <p><em>Sources listed if written by other than Adrian</em></p>
 <p><strong>Package Related</strong></p>
 <ul>
 <li>
 <code><a href="reference/usePackage.html">usePackage()</a></code>
 <ul>
-<li>Tries to attach a package, if missing: tries to install it. <a href="https://github.com/sussyfuss/usefulScripts">Source</a><br>
+<li>Tries to attach a package, if missing: tries to install it. <a href="https://github.com/sussyfuss/usefulScripts" class="external-link">Source</a><br>
 </li>
 </ul>
 </li>
@@ -153,19 +148,19 @@ A function is worthwhile if it leads to the most usefulness for the greatest num
 <p><strong>Quality of Life</strong></p>
 <ul>
 <li>
-<code><a href="reference/%notin%.html">%notin%</a></code>
+<code>%notin%</code>
 <ul>
 <li>Not In. Find out what’s in one vector and… not in another.</li>
 </ul>
 </li>
 <li>
-<code>interleave</code>
+<code><a href="reference/interleave.html">interleave()</a></code>
 <ul>
 <li>Take two vectors and interleave them. Added for the next function</li>
 </ul>
 </li>
 <li>
-<code>gg_color_hue</code>
+<code><a href="reference/gg_color_hue.html">gg_color_hue()</a></code>
 <ul>
 <li>Produce an interleaved colour palette of low and high luminance values</li>
 </ul>
@@ -232,16 +227,16 @@ A function is worthwhile if it leads to the most usefulness for the greatest num
 </li>
 </ul>
 </div>
-<div id="current-templates" class="section level3">
-<h3 class="hasAnchor">
-<a href="#current-templates" class="anchor"></a>Current Templates</h3>
+<div class="section level3">
+<h3 id="current-templates">Current Templates<a class="anchor" aria-label="anchor" href="#current-templates"></a>
+</h3>
 <ul>
 <li>
 <strong>Reportable Script</strong>
 <ul>
 <li>Frontmatter for a script that can easily be modified to knit a report</li>
 <li>Includes default headers to hide all but the code and results desired</li>
-<li>Uses <a href="https://bookdown.org/yihui/rmarkdown-cookbook/spin.html">Spin</a>
+<li>Uses <a href="https://bookdown.org/yihui/rmarkdown-cookbook/spin.html" class="external-link">Spin</a>
 </li>
 </ul>
 </li>
@@ -252,28 +247,41 @@ A function is worthwhile if it leads to the most usefulness for the greatest num
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>Apache License 2.0</li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing utilitarian</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Adrian Zetner <br><small class="roles"> Maintainer </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Adrian Zetner.</p>
+  <p></p>
+<p>Developed by Adrian Zetner.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -281,6 +289,8 @@ A function is worthwhile if it leads to the most usefulness for the greatest num
 
   
 
+
+  
 
   </body>
 </html>

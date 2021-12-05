@@ -4,13 +4,15 @@
 \alias{gg_color_hue}
 \title{gg_color_hue}
 \usage{
-gg_color_hue(n)
+gg_color_hue(n, interleave = TRUE)
 }
 \arguments{
 \item{n}{Number of colours in palette}
+
+\item{interleave}{Interleave or not}
 }
 \description{
-Create an interleaved high-low-luminance pal
+Create a ggplot palette and optionally interleave high-low-luminance
 }
 \examples{
 gg_color_hue(n = 10 )

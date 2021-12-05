@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilitarian</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -79,7 +75,7 @@
 
       
 
-      </header><script src="cigar_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>CIGAR Visualization</h1>
@@ -92,119 +88,118 @@
 
     
     
-<div id="read-in-sam-files-as-tibble" class="section level2">
-<h2 class="hasAnchor">
-<a href="#read-in-sam-files-as-tibble" class="anchor"></a>Read in SAM files as tibble</h2>
+<div class="section level2">
+<h2 id="read-in-sam-files-as-tibble">Read in SAM files as tibble<a class="anchor" aria-label="anchor" href="#read-in-sam-files-as-tibble"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">toy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam.html">read_sam</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">toy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam.html">read_sam</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">toy</span>
-<span class="co">#&gt; # A tibble: 13 x 11</span>
-<span class="co">#&gt;    QNAME  FLAG RNAME   POS  MAPQ CIGAR    RNEXT PNEXT  TLEN SEQ        QUAL     </span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    </span>
-<span class="co">#&gt;  1 r001    163 ref       7    30 8M4I4M1~ =        37    39 TTAGATAAA~ *        </span>
-<span class="co">#&gt;  2 r002      0 ref       9    30 1S2I6M1~ *         0     0 AAAAGATAA~ *        </span>
-<span class="co">#&gt;  3 r003      0 ref       9    30 5H6M     *         0     0 AGCTAA     *        </span>
-<span class="co">#&gt;  4 r004      0 ref      16    30 6M14N1I~ *         0     0 ATAGCTCTC~ *        </span>
-<span class="co">#&gt;  5 r003     16 ref      29    30 6H5M     *         0     0 TAGGC      *        </span>
-<span class="co">#&gt;  6 r001     83 ref      37    30 5S9M6S   =         7   -39 CAGCGCCAT  *        </span>
-<span class="co">#&gt;  7 x1        0 ref2      1    30 20M      *         0     0 aggttttat~ ????????~</span>
-<span class="co">#&gt;  8 x2        0 ref2      2    30 21M      *         0     0 ggttttata~ ????????~</span>
-<span class="co">#&gt;  9 x3        0 ref2      6    30 9M4I13M  *         0     0 ttataaaac~ ????????~</span>
-<span class="co">#&gt; 10 x4        0 ref2     10    30 25M      *         0     0 CaaaTaatt~ ????????~</span>
-<span class="co">#&gt; 11 x5        0 ref2     12    30 24M      *         0     0 aaTaattaa~ ????????~</span>
-<span class="co">#&gt; 12 x6        0 ref2     14    30 23M      *         0     0 Taattaagt~ ????????~</span>
-<span class="co">#&gt; 13 x3        0 ref      22    30 4S5M2I2~ *         0     0 ttataaaac~ ????????~</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 13 x 12</span></span>
+<span class="co">#&gt;    QNAME  FLAG RNAME   POS  MAPQ CIGAR   RNEXT PNEXT  TLEN SEQ     QUAL   X12   </span>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> r001    163 ref       7    30 8M4I4M~ =        37    39 TTAGAT~ *      XX:B:~</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> r002      0 ref       9    30 1S2I6M~ *         0     0 AAAAGA~ *      <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> r003      0 ref       9    30 5H6M    *         0     0 AGCTAA  *      <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> r004      0 ref      16    30 6M14N1~ *         0     0 ATAGCT~ *      <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> r003     16 ref      29    30 6H5M    *         0     0 TAGGC   *      <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> r001     83 ref      37    30 5S9M6S  =         7   -<span style="color: #BB0000;">39</span> CAGCGC~ *      <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> x1        0 ref2      1    30 20M     *         0     0 aggttt~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> x2        0 ref2      2    30 21M     *         0     0 ggtttt~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> x3        0 ref2      6    30 9M4I13M *         0     0 ttataa~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> x4        0 ref2     10    30 25M     *         0     0 CaaaTa~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> x5        0 ref2     12    30 24M     *         0     0 aaTaat~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">12</span> x6        0 ref2     14    30 23M     *         0     0 Taatta~ ?????~ <span style="color: #BB0000;">NA</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">13</span> x3        0 ref      22    30 4S5M2I~ *         0     0 ttataa~ ?????~ <span style="color: #BB0000;">NA</span></span></code></pre></div>
 </div>
-<div id="create-tidy-cigar-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#create-tidy-cigar-data" class="anchor"></a>Create Tidy CIGAR Data</h2>
+<div class="section level2">
+<h2 id="create-tidy-cigar-data">Create Tidy CIGAR Data<a class="anchor" aria-label="anchor" href="#create-tidy-cigar-data"></a>
+</h2>
 <p>Results in a long table of tidy data showing start and end positions of the operations along with their English translations.</p>
 <p>Due to the facetting of CIGAR visualizations on Reference names (RNAME) it is wise to group them together if the organism is what matters. For example in the case of the human genome vs sars coronavirus grouping all the human chromosomes together is useful.</p>
-<pre><code>sam %&gt;% 
-  mutate(RNAME = case_when(RNAME == "MN908947.3" ~ "hcov",
-                           RNAME == "*" ~ "unmapped",
-                           TRUE ~ "human")) %&gt;% 
-  tidy_cigar()
-                           </code></pre>
+<pre><code><span class="va">sam</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span>RNAME <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">RNAME</span> <span class="op">==</span> <span class="st">"MN908947.3"</span> <span class="op">~</span> <span class="st">"hcov"</span>,
+                           <span class="va">RNAME</span> <span class="op">==</span> <span class="st">"*"</span> <span class="op">~</span> <span class="st">"unmapped"</span>,
+                           <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"human"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="../reference/tidy_cigar.html">tidy_cigar</a></span><span class="op">(</span><span class="op">)</span></code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">toy.tc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/tidy_cigar.html">tidy_cigar</a></span><span class="op">(</span><span class="va">toy</span><span class="op">)</span>
 
 <span class="va">toy.tc</span>
-<span class="co">#&gt; # A tibble: 39 x 9</span>
-<span class="co">#&gt; # Groups:   QNAME, RNAME, POS [13]</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 39 x 9</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># Groups:   QNAME, RNAME, POS [13]</span></span>
 <span class="co">#&gt;    QNAME RNAME  MAPQ   POS POSstart POSend CIGARstart CIGARend Operation</span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    </span>
-<span class="co">#&gt;  1 r001  ref      30     7        8     15          1        8 Match    </span>
-<span class="co">#&gt;  2 r001  ref      30     7       16     19          9       12 Insertion</span>
-<span class="co">#&gt;  3 r001  ref      30     7       20     23         13       16 Match    </span>
-<span class="co">#&gt;  4 r001  ref      30     7       24     24         17       17 Deletion </span>
-<span class="co">#&gt;  5 r001  ref      30     7       25     27         18       20 Match    </span>
-<span class="co">#&gt;  6 r001  ref      30    37       38     42          1        5 Soft Clip</span>
-<span class="co">#&gt;  7 r001  ref      30    37       43     51          6       14 Match    </span>
-<span class="co">#&gt;  8 r001  ref      30    37       52     57         15       20 Soft Clip</span>
-<span class="co">#&gt;  9 r002  ref      30     9       10     10          1        1 Soft Clip</span>
-<span class="co">#&gt; 10 r002  ref      30     9       11     12          2        3 Insertion</span>
-<span class="co">#&gt; # ... with 29 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> r001  ref      30     7        8     15          1        8 Match    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> r001  ref      30     7       16     19          9       12 Insertion</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> r001  ref      30     7       20     23         13       16 Match    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> r001  ref      30     7       24     24         17       17 Deletion </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> r001  ref      30     7       25     27         18       20 Match    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> r001  ref      30    37       38     42          1        5 Soft Clip</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> r001  ref      30    37       43     51          6       14 Match    </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> r001  ref      30    37       52     57         15       20 Soft Clip</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> r002  ref      30     9       10     10          1        1 Soft Clip</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> r002  ref      30     9       11     12          2        3 Insertion</span>
+<span class="co">#&gt; <span style="color: #949494;"># ... with 29 more rows</span></span></code></pre></div>
 </div>
-<div id="plot-a-cigar" class="section level2">
-<h2 class="hasAnchor">
-<a href="#plot-a-cigar" class="anchor"></a>Plot a CIGAR</h2>
+<div class="section level2">
+<h2 id="plot-a-cigar">Plot a CIGAR<a class="anchor" aria-label="anchor" href="#plot-a-cigar"></a>
+</h2>
 <p>Plotting a cigar from a single read in the tidied cigar table is done using <code><a href="../reference/plot_cigar.html">plot_cigar()</a></code> and specifying the read. Plots are facetted based on the references and the mapped position of the read. Returns a plot.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cigar.html">plot_cigar</a></span><span class="op">(</span><span class="va">toy.tc</span>, <span class="st">"r002"</span><span class="op">)</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
-<div id="plot-all-cigars" class="section level2">
-<h2 class="hasAnchor">
-<a href="#plot-all-cigars" class="anchor"></a>Plot all CIGARs</h2>
+<div class="section level2">
+<h2 id="plot-all-cigars">Plot all CIGARs<a class="anchor" aria-label="anchor" href="#plot-all-cigars"></a>
+</h2>
 <p>A wrapper around calling <code><a href="../reference/plot_cigar.html">plot_cigar()</a></code> on all the reads in the SAM file. Will warn and stop if more than 20 elements to be created, override this with the <code>lg=TRUE</code> argument.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plot_all_cigars.html">plot_all_cigars</a></span><span class="op">(</span><span class="va">toy.tc</span><span class="op">)</span>
 
 <span class="va">toy</span><span class="op">[</span><span class="va">toy</span><span class="op">$</span><span class="va">QNAME</span> <span class="op">==</span> <span class="st">"r001"</span>, <span class="st">"CIGAR"</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 2 x 1</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 x 1</span></span>
 <span class="co">#&gt;   CIGAR     </span>
-<span class="co">#&gt;   &lt;chr&gt;     </span>
-<span class="co">#&gt; 1 8M4I4M1D3M</span>
-<span class="co">#&gt; 2 5S9M6S</span>
+<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 8M4I4M1D3M</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 5S9M6S</span>
 <span class="va">p</span><span class="op">[[</span><span class="st">"r001"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-5-1.png" width="768"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">toy</span><span class="op">[</span><span class="va">toy</span><span class="op">$</span><span class="va">QNAME</span> <span class="op">==</span> <span class="st">"x3"</span>, <span class="st">"CIGAR"</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 2 x 1</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 x 1</span></span>
 <span class="co">#&gt;   CIGAR       </span>
-<span class="co">#&gt;   &lt;chr&gt;       </span>
-<span class="co">#&gt; 1 9M4I13M     </span>
-<span class="co">#&gt; 2 4S5M2I2D8M5S</span>
+<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 9M4I13M     </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 4S5M2I2D8M5S</span>
 <span class="va">p</span><span class="op">[[</span><span class="st">"x3"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <p><img src="cigar_files/figure-html/unnamed-chunk-6-1.png" width="768"></p>
 </div>
-<div id="postscript" class="section level1">
-<h1 class="hasAnchor">
-<a href="#postscript" class="anchor"></a>Postscript</h1>
+<div class="section level1">
+<h1 id="postscript">Postscript<a class="anchor" aria-label="anchor" href="#postscript"></a>
+</h1>
 <p>SAM headers contain useful information but for the purposes of cigar visualization they are ignored. Having access to them can be helpful so there is an included function to pull headers (as I couldn’t figure out a way to do so with readr).</p>
-<div id="show-reference-lengths" class="section level2">
-<h2 class="hasAnchor">
-<a href="#show-reference-lengths" class="anchor"></a>Show Reference Lengths</h2>
+<div class="section level2">
+<h2 id="show-reference-lengths">Show Reference Lengths<a class="anchor" aria-label="anchor" href="#show-reference-lengths"></a>
+</h2>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">h</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam_headers.html">read_sam_headers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">h</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_sam_headers.html">read_sam_headers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"toy.sam"</span>, package <span class="op">=</span> <span class="st">"utilitarian"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">h</span><span class="op">$</span><span class="va">References</span>
-<span class="co">#&gt; # A tibble: 0 x 2</span>
-<span class="co">#&gt; # ... with 2 variables: Name &lt;chr&gt;, Length &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 x 2</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># ... with 2 variables: Name &lt;chr&gt;, Length &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<div id="show-command-line-params-and-software-details" class="section level2">
-<h2 class="hasAnchor">
-<a href="#show-command-line-params-and-software-details" class="anchor"></a>Show Command line params and software details</h2>
+<div class="section level2">
+<h2 id="show-command-line-params-and-software-details">Show Command line params and software details<a class="anchor" aria-label="anchor" href="#show-command-line-params-and-software-details"></a>
+</h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">h</span><span class="op">$</span><span class="va">Mapping</span>
-<span class="co">#&gt; # A tibble: 0 x 4</span>
-<span class="co">#&gt; # ... with 4 variables: ID &lt;chr&gt;, PN &lt;chr&gt;, VN &lt;chr&gt;, CL &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 x 4</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># ... with 4 variables: ID &lt;chr&gt;, PN &lt;chr&gt;, VN &lt;chr&gt;, CL &lt;chr&gt;</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -220,11 +215,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Adrian Zetner.</p>
+  <p></p>
+<p>Developed by Adrian Zetner.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -232,6 +229,8 @@
 
   
 
+
+  
 
   </body>
 </html>

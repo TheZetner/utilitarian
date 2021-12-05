@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://thezetner.github.io/utilitarian//index.html</loc>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//reference/insertGlimpseAddin.html</loc>
+    <loc>/articles/cigar.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//reference/insertViewAddin.html</loc>
+    <loc>/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//reference/libraries.html</loc>
+    <loc>/articles/package-related.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//reference/normalize.html</loc>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//reference/usePackage.html</loc>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://thezetner.github.io/utilitarian//articles/package-related.html</loc>
+    <loc>/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clipExcel.html</loc>
+  </url>
+  <url>
+    <loc>/reference/compareSeq.html</loc>
+  </url>
+  <url>
+    <loc>/reference/exposeDupes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/gg_color_hue.html</loc>
+  </url>
+  <url>
+    <loc>/reference/grapes-not-in-grapes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/grapes-notin-grapes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/insertClipExcelAddin.html</loc>
+  </url>
+  <url>
+    <loc>/reference/insertGlimpseAddin.html</loc>
+  </url>
+  <url>
+    <loc>/reference/insertViewAddin.html</loc>
+  </url>
+  <url>
+    <loc>/reference/interleave.html</loc>
+  </url>
+  <url>
+    <loc>/reference/libraries.html</loc>
+  </url>
+  <url>
+    <loc>/reference/normalize.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ops.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plot_all_cigar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plot_all_cigars.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plot_cigar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/read_sam.html</loc>
+  </url>
+  <url>
+    <loc>/reference/read_sam_headers.html</loc>
+  </url>
+  <url>
+    <loc>/reference/samcols.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sam_to_fasta.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tidy_cigar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/usePackage.html</loc>
+  </url>
+  <url>
+    <loc>/reference/utilitarian.html</loc>
   </url>
 </urlset>

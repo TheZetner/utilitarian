@@ -1,8 +1,8 @@
 pandoc: 2.11.2
-pkgdown: 1.6.1
+pkgdown: 2.0.0
 pkgdown_sha: ~
 articles:
   cigar: cigar.html
   package-related: package-related.html
-last_built: 2021-12-01T22:37Z
+last_built: 2021-12-05T01:25Z
 
